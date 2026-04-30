@@ -3,9 +3,17 @@ import type { Locale } from '../i18n';
 
 const MAX_RESULTS = 8;
 
+const displayName = (feature: CampusFeature): string => {
+  const p = feature.properties;
+  if (p.shortLabel && !p.name.toUpperCase().startsWith(`${p.shortLabel.toUpperCase()} -`) && p.name !== p.shortLabel) {
+    return `${p.shortLabel} - ${p.name}`;
+  }
+  return p.name;
+};
+
 const toSearchHaystack = (feature: CampusFeature): string => {
   const p = feature.properties;
-  return `${p.name} ${p.category} ${p.address} ${p.id}`.toLowerCase();
+  return `${displayName(feature)} ${p.shortLabel ?? ''} ${p.category} ${p.address} ${p.id}`.toLowerCase();
 };
 
 export const setupSearch = (
@@ -41,7 +49,7 @@ export const setupSearch = (
       button.type = 'button';
       button.className = 'result-item';
       button.innerHTML = `
-        <strong>${feature.properties.name}</strong>
+        <strong>${displayName(feature)}</strong>
         <span>${feature.properties.category}</span>
       `;
       button.addEventListener('click', () => {

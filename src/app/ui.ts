@@ -8,10 +8,14 @@ export type AppElements = {
   categoryFilters: HTMLDivElement;
   localeSelect: HTMLSelectElement;
   rendererModeSelect: HTMLSelectElement;
+  basemapStyleSelect: HTMLSelectElement;
+  themeModeSelect: HTMLSelectElement;
   weatherUnitSelect: HTMLSelectElement;
   weatherCard: HTMLDivElement;
   transitLabelsToggle: HTMLInputElement;
   view3DToggle: HTMLInputElement;
+  resetMapViewBtn: HTMLButtonElement;
+  alignMapOrientationBtn: HTMLButtonElement;
   resetFiltersBtn: HTMLButtonElement;
   a11yDyslexicToggle: HTMLInputElement;
   a11yContrastToggle: HTMLInputElement;
@@ -69,6 +73,20 @@ export const renderAppShell = (locale: Locale): AppElements => {
             </select>
           </label>
           <label class="topbar-control">
+            <span>${locale === 'de' ? 'Basiskarte' : 'Basemap'}</span>
+            <select id="basemapStyle">
+              <option value="osm">${locale === 'de' ? 'Standard (OSM)' : 'Standard (OSM)'}</option>
+              <option value="light">${locale === 'de' ? 'Hell (Light)' : 'Light'}</option>
+            </select>
+          </label>
+          <label class="topbar-control">
+            <span>${locale === 'de' ? 'Farbschema' : 'Theme'}</span>
+            <select id="themeMode">
+              <option value="light">${locale === 'de' ? 'Hell' : 'Light'}</option>
+              <option value="dark">${locale === 'de' ? 'Dunkel' : 'Dark'}</option>
+            </select>
+          </label>
+          <label class="topbar-control">
             <details class="collapsible-panel">
               <summary>${locale === 'de' ? 'Wetteroptionen' : 'Weather options'}</summary>
               <select id="weatherUnitSelect" aria-label="${locale === 'de' ? 'Temperatureinheit' : 'Temperature unit'}">
@@ -118,7 +136,7 @@ export const renderAppShell = (locale: Locale): AppElements => {
         <label class="label" for="searchInput">${locale === 'de' ? 'Suche nach Gebaeuden und POIs' : 'Search buildings and POIs'}</label>
         <input id="searchInput" type="search" placeholder="${locale === 'de' ? 'z.B. K10, Zahnklinik, Parken' : 'e.g. K10, Dental Clinic, Parking'}" />
         <div id="searchResults" class="search-results" aria-live="polite"></div>
-        <h2>${locale === 'de' ? 'Kategorien' : 'Categories'}</h2>
+        <h2>${locale === 'de' ? 'Anzeigen / Ausblenden' : 'Show / Hide'}</h2>
         <button id="resetFiltersBtn" type="button" class="reset-btn">${locale === 'de' ? 'Filter zuruecksetzen' : 'Reset filters'}</button>
         <div id="categoryFilters" class="filter-list"></div>
         <label class="filter-item transit-toggle">
@@ -129,6 +147,8 @@ export const renderAppShell = (locale: Locale): AppElements => {
           <input id="view3DToggle" type="checkbox" />
           <span>${locale === 'de' ? '🧊 3D-Ansicht aktivieren (nur MapLibre)' : '🧊 Enable 3D view (MapLibre only)'}</span>
         </label>
+        <button id="resetMapViewBtn" type="button" class="reset-btn">${locale === 'de' ? '🧭 Kartenansicht zuruecksetzen' : '🧭 Reset map view'}</button>
+        <button id="alignMapOrientationBtn" type="button" class="reset-btn">${locale === 'de' ? '🗺️ An MHH-Plan ausrichten' : '🗺️ Match MHH map orientation'}</button>
         <section class="a11y-panel">
           <h2>${locale === 'de' ? 'Barrierefreiheit' : 'Accessibility'}</h2>
           <label class="a11y-item"><input id="a11yDyslexicToggle" type="checkbox" /> <span>${locale === 'de' ? 'OpenDyslexic Schriftart' : 'OpenDyslexic Font'}</span></label>
@@ -156,10 +176,14 @@ export const renderAppShell = (locale: Locale): AppElements => {
     categoryFilters: requireElement<HTMLDivElement>('#categoryFilters'),
     localeSelect: requireElement<HTMLSelectElement>('#localeSelect'),
     rendererModeSelect: requireElement<HTMLSelectElement>('#rendererMode'),
+    basemapStyleSelect: requireElement<HTMLSelectElement>('#basemapStyle'),
+    themeModeSelect: requireElement<HTMLSelectElement>('#themeMode'),
     weatherUnitSelect: requireElement<HTMLSelectElement>('#weatherUnitSelect'),
     weatherCard: requireElement<HTMLDivElement>('#weatherCard'),
     transitLabelsToggle: requireElement<HTMLInputElement>('#transitLabelsToggle'),
     view3DToggle: requireElement<HTMLInputElement>('#view3DToggle'),
+    resetMapViewBtn: requireElement<HTMLButtonElement>('#resetMapViewBtn'),
+    alignMapOrientationBtn: requireElement<HTMLButtonElement>('#alignMapOrientationBtn'),
     resetFiltersBtn: requireElement<HTMLButtonElement>('#resetFiltersBtn'),
     a11yDyslexicToggle: requireElement<HTMLInputElement>('#a11yDyslexicToggle'),
     a11yContrastToggle: requireElement<HTMLInputElement>('#a11yContrastToggle'),

@@ -3,7 +3,57 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MHH Campus Map</title>
+    <title>MHH Interaktiver Lageplan / Interactive Campus Map - Kliniken, Gebaeude und Orientierung</title>
+    <meta
+      name="description"
+      content="Interaktiver MHH Lageplan und Interactive Campus Map der Medizinischen Hochschule Hannover mit Gebaeuden, Kliniken, Parkplaetzen und wichtigen Anlaufstellen fuer Besucher, Patienten, Studierende und Mitarbeitende."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="MHH Campus Map" />
+    <meta name="theme-color" content="#0f4c81" />
+    <link rel="canonical" href="/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MHH Campus Map" />
+    <meta property="og:title" content="MHH Interaktiver Lageplan / Interactive Campus Map" />
+    <meta
+      property="og:description"
+      content="Interaktiver MHH Lageplan (interactive map) mit Suche, Filtern und wichtigen Standorten."
+    />
+    <meta property="og:url" content="/" />
+    <meta property="og:locale" content="de_DE" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="MHH Interaktiver Lageplan / Interactive Campus Map" />
+    <meta
+      name="twitter:description"
+      content="Interaktiver MHH Lageplan (interactive map) mit Gebaeuden, Kliniken und Orientierungspunkten."
+    />
+
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "MHH Interactive Campus Map",
+        "alternateName": "MHH Lageplan",
+        "inLanguage": "de",
+        "url": "/",
+        "description": "Interaktiver Lageplan und interactive map der Medizinischen Hochschule Hannover.",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+    <script>
+      const absolutePageUrl = `${window.location.origin}${window.location.pathname}`;
+      const canonical = document.querySelector('link[rel="canonical"]');
+      const ogUrl = document.querySelector('meta[property="og:url"]');
+      if (canonical) canonical.setAttribute('href', absolutePageUrl);
+      if (ogUrl) ogUrl.setAttribute('content', absolutePageUrl);
+    </script>
   </head>
   <body>
     <div id="app"></div>

@@ -3,7 +3,9 @@ import L from 'leaflet';
 import type { GeoJSON } from 'geojson';
 import { getCategoryMeta } from '../config/categories';
 import type { Locale } from '../i18n';
+import type { BasemapStyle, ThemeMode } from './initMap';
 import type { CampusFeature, CampusFeatureCollection } from '../types/campus';
+import { deriveTransitRouteLines } from './transitRoutes';
 
 type FilterOptions = {
   searchText: string;
@@ -16,10 +18,13 @@ type LeafletCampusMap = {
   setTransitLabelsVisible: (visible: boolean) => void;
   setThreeDEnabled: (enabled: boolean) => void;
   setEmojiEnabledCategories: (enabledCategories: Set<string>) => void;
+  setLabelEnabledCategories: (enabledCategories: Set<string>) => void;
   setWalkingRoute: (coordinates: [number, number][], animate: boolean) => void;
   clearWalkingRoute: () => void;
   closeDetailPopups: () => void;
   pickPointOnce: (onPick: (coords: [number, number]) => void) => void;
+  resetView: () => void;
+  alignToReferenceOrientation: () => void;
 };
 
 const MHH_CENTER: [number, number] = [52.383675, 9.8049554];
@@ -29,12 +34,57 @@ const MHH_BOUNDS = L.latLngBounds(
 );
 const LEAFLET_MIN_ZOOM = 15;
 const LEAFLET_MAX_ZOOM = 19;
+const LEAFLET_PERMANENT_LABEL_MIN_ZOOM = 16.2;
+const LEAFLET_PERMANENT_SHORT_LABEL_MIN_ZOOM = 15.8;
+const LEAFLET_PERMANENT_LABEL_MAX_CHARS = 24;
+const CAMPUS_POLYGON_LATLNGS: [number, number][] = [
+  [52.3899, 9.7958],
+  [52.3899, 9.8069],
+  [52.3877, 9.8083],
+  [52.3847, 9.8089],
+  [52.3818, 9.8089],
+  [52.3793, 9.8086],
+  [52.3776, 9.8081],
+  [52.376, 9.8073],
+  [52.3749, 9.8052],
+  [52.3746, 9.801],
+  [52.3749, 9.7973],
+  [52.3762, 9.7962],
+  [52.3784, 9.7958],
+  [52.3818, 9.7957],
+  [52.3855, 9.7957],
+  [52.3899, 9.7958],
+];
+
+const getLeafletBasemapConfig = (basemap: BasemapStyle, theme: ThemeMode): { url: string; attribution: string } => {
+  if (theme === 'dark') {
+    return {
+      url: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+      attribution: '&copy; OpenStreetMap contributors, &copy; CARTO',
+    };
+  }
+  if (basemap === 'light') {
+    return {
+      url: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+      attribution: '&copy; OpenStreetMap contributors, &copy; CARTO',
+    };
+  }
+  return {
+    url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    attribution: '&copy; OpenStreetMap contributors',
+  };
+};
 
 const colorByCategory = (category: string): string => getCategoryMeta(category).color;
 
 const tooltipContent = (feature: CampusFeature): string => {
   const meta = getCategoryMeta(feature.properties.category);
-  return `<span class="tooltip-inner">${meta.icon} <strong>${feature.properties.name}</strong></span>`;
+  const p = feature.properties;
+  const displayName =
+    p.shortLabel && !p.name.toUpperCase().startsWith(`${p.shortLabel.toUpperCase()} -`) && p.name !== p.shortLabel
+      ? `${p.shortLabel} - ${p.name}`
+      : p.name;
+  return `<span class="tooltip-inner">${meta.icon} <strong>${displayName}</strong></span>`;
 };
 
 const iconOnlyContent = (feature: CampusFeature): string => {
@@ -44,6 +94,10 @@ const iconOnlyContent = (feature: CampusFeature): string => {
 
 const popupHtml = (feature: CampusFeature, locale: Locale): string => {
   const p = feature.properties;
+  const displayName =
+    p.shortLabel && !p.name.toUpperCase().startsWith(`${p.shortLabel.toUpperCase()} -`) && p.name !== p.shortLabel
+      ? `${p.shortLabel} - ${p.name}`
+      : p.name;
   const labels =
     locale === 'de'
       ? {
@@ -53,6 +107,8 @@ const popupHtml = (feature: CampusFeature, locale: Locale): string => {
           transitMode: 'Verkehrsmittel',
           lines: 'Linien',
           direction: 'Richtung',
+          entrance: 'Eingang',
+          wheelchair: 'Rollstuhl',
           category: 'Kategorie',
           address: 'Adresse',
           lastVerified: 'Zuletzt geprueft',
@@ -65,6 +121,8 @@ const popupHtml = (feature: CampusFeature, locale: Locale): string => {
           transitMode: 'Transit mode',
           lines: 'Lines',
           direction: 'Direction',
+          entrance: 'Entrance',
+          wheelchair: 'Wheelchair',
           category: 'Category',
           address: 'Address',
           lastVerified: 'Last verified',
@@ -77,19 +135,24 @@ const popupHtml = (feature: CampusFeature, locale: Locale): string => {
   const websiteRow = p.website
     ? `<p><strong>${labels.website}:</strong> <a href="${p.website}" target="_blank" rel="noreferrer">${p.website}</a></p>`
     : '';
-  const transitModeRow = p.transitMode ? `<p><strong>${labels.transitMode}:</strong> ${p.transitMode}</p>` : '';
-  const transitLinesRow = p.transitLines ? `<p><strong>${labels.lines}:</strong> ${p.transitLines}</p>` : '';
-  const transitDirectionRow = p.transitDirection
+  const showTransitFields = p.category === 'transit';
+  const transitModeRow = showTransitFields && p.transitMode ? `<p><strong>${labels.transitMode}:</strong> ${p.transitMode}</p>` : '';
+  const transitLinesRow = showTransitFields && p.transitLines ? `<p><strong>${labels.lines}:</strong> ${p.transitLines}</p>` : '';
+  const transitDirectionRow = showTransitFields && p.transitDirection
     ? `<p><strong>${labels.direction}:</strong> ${p.transitDirection}</p>`
     : '';
+  const entranceRow = p.entranceType ? `<p><strong>${labels.entrance}:</strong> ${p.entranceType}</p>` : '';
+  const wheelchairRow = p.wheelchair ? `<p><strong>${labels.wheelchair}:</strong> ${p.wheelchair}</p>` : '';
   return `
     <article class="popup">
-      <h3>${p.name}</h3>
+      <h3>${displayName}</h3>
       <p><strong>${labels.category}:</strong> ${p.category}</p>
       <p><strong>${labels.address}:</strong> ${p.address}</p>
       ${transitModeRow}
       ${transitLinesRow}
       ${transitDirectionRow}
+      ${entranceRow}
+      ${wheelchairRow}
       ${openingHoursRow}
       ${phoneRow}
       ${websiteRow}
@@ -109,8 +172,41 @@ const matchesFilters = (feature: CampusFeature, options: FilterOptions): boolean
     return true;
   }
 
-  const haystack = `${feature.properties.name} ${feature.properties.category} ${feature.properties.address} ${feature.properties.id}`.toLowerCase();
+  const haystack =
+    `${feature.properties.shortLabel ?? ''} ${feature.properties.name} ${feature.properties.category} ${feature.properties.address} ${feature.properties.id}`.toLowerCase();
   return query.split(/\s+/).every((term) => haystack.includes(term));
+};
+
+const getLabelTooltipOptions = (
+  feature: CampusFeature,
+  mapZoom: number,
+  labelsEnabled: boolean,
+  transitLabelsVisible: boolean,
+): L.TooltipOptions => {
+  const base: L.TooltipOptions = {
+    sticky: false,
+    direction: 'auto',
+    className: 'campus-tooltip campus-tooltip-hover',
+    opacity: 1,
+  };
+  if (transitLabelsVisible && feature.properties.category === 'transit') {
+    return { ...base, className: 'campus-tooltip campus-tooltip-permanent', permanent: true };
+  }
+  if (!labelsEnabled) {
+    return base;
+  }
+  const shortLabel = (feature.properties.shortLabel || '').trim();
+  if (shortLabel && mapZoom >= LEAFLET_PERMANENT_SHORT_LABEL_MIN_ZOOM) {
+    return { ...base, className: 'campus-tooltip campus-tooltip-permanent', permanent: true };
+  }
+  if (mapZoom < LEAFLET_PERMANENT_LABEL_MIN_ZOOM) {
+    return base;
+  }
+  const labelText = (feature.properties.shortLabel || feature.properties.name || '').trim();
+  if (!labelText || labelText.length > LEAFLET_PERMANENT_LABEL_MAX_CHARS) {
+    return base;
+  }
+  return { ...base, className: 'campus-tooltip campus-tooltip-permanent', permanent: true };
 };
 
 export const initLeafletFallbackMap = (
@@ -118,6 +214,9 @@ export const initLeafletFallbackMap = (
   poiData: CampusFeatureCollection,
   buildingData: CampusFeatureCollection,
   locale: Locale,
+  basemap: BasemapStyle,
+  theme: ThemeMode,
+  initialVisibleCategories?: Set<string>,
 ): LeafletCampusMap => {
   const map = L.map(containerId, {
     center: MHH_CENTER,
@@ -128,38 +227,65 @@ export const initLeafletFallbackMap = (
     maxBoundsViscosity: 1.0,
   });
 
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap contributors',
+  const basemapConfig = getLeafletBasemapConfig(basemap, theme);
+  L.tileLayer(basemapConfig.url, {
+    attribution: basemapConfig.attribution,
     minZoom: LEAFLET_MIN_ZOOM,
     maxZoom: LEAFLET_MAX_ZOOM,
   }).addTo(map);
 
+  L.polygon(CAMPUS_POLYGON_LATLNGS, {
+    color: '#f43f5e',
+    weight: 5,
+    fillColor: '#f43f5e',
+    fillOpacity: 0.03,
+    interactive: false,
+  }).addTo(map);
+
+  const transitRouteLayer = L.layerGroup().addTo(map);
   const renderLayer = L.layerGroup().addTo(map);
   const allFeatures: CampusFeature[] = [...buildingData.features, ...poiData.features];
+  const transitRouteFeatures = deriveTransitRouteLines(poiData).features;
   let transitLabelsVisible = false;
   let emojiEnabledCategories = new Set<string>(allFeatures.map((feature) => feature.properties.category));
+  let labelEnabledCategories = new Set<string>(allFeatures.map((feature) => feature.properties.category));
   const routeLayer = L.layerGroup().addTo(map);
   let routeAnimationId: number | null = null;
+  const initialCategories =
+    initialVisibleCategories && initialVisibleCategories.size > 0
+      ? new Set(initialVisibleCategories)
+      : new Set(allFeatures.map((feature) => feature.properties.category));
   let lastOptions: FilterOptions = {
     searchText: '',
-    categories: new Set(allFeatures.map((feature) => feature.properties.category)),
+    categories: new Set(initialCategories),
   };
 
   const render = (options: FilterOptions): void => {
     lastOptions = options;
     renderLayer.clearLayers();
+    transitRouteLayer.clearLayers();
+    const mapZoom = map.getZoom();
+    if (transitLabelsVisible) {
+      transitRouteFeatures.forEach((feature) => {
+        const latLngs = feature.geometry.coordinates.map(([lng, lat]) => [lat, lng] as [number, number]);
+        L.polyline(latLngs, {
+          color: feature.properties.color,
+          weight: 4,
+          opacity: 0.8,
+          lineCap: 'round',
+          lineJoin: 'round',
+        })
+          .bindTooltip(
+            `${feature.properties.mode === 'metro' ? 'Metro' : 'Bus'} ${feature.properties.line}`,
+            { sticky: true, direction: 'top', className: 'campus-tooltip', opacity: 1 },
+          )
+          .addTo(transitRouteLayer);
+      });
+    }
 
     allFeatures.filter((feature) => matchesFilters(feature, options)).forEach((feature) => {
-      const tooltipOpts: L.TooltipOptions = {
-        sticky: false,
-        direction: 'auto',
-        className: 'campus-tooltip',
-        opacity: 1,
-      };
-      const transitTooltipOpts: L.TooltipOptions = {
-        ...tooltipOpts,
-        permanent: true,
-      };
+      const labelsEnabledForFeature = labelEnabledCategories.has(feature.properties.category);
+      const tooltipOpts = getLabelTooltipOptions(feature, mapZoom, labelsEnabledForFeature, transitLabelsVisible);
 
       if (feature.geometry.type === 'Point') {
         const [lng, lat] = feature.geometry.coordinates;
@@ -184,12 +310,7 @@ export const initLeafletFallbackMap = (
             fillColor: colorByCategory(feature.properties.category),
             fillOpacity: 0.9,
           })
-            .bindTooltip(
-              tooltipContent(feature),
-              transitLabelsVisible && feature.properties.category === 'transit'
-                ? transitTooltipOpts
-                : tooltipOpts,
-            )
+            .bindTooltip(tooltipContent(feature), tooltipOpts)
             .bindPopup(popupHtml(feature, locale))
             .addTo(renderLayer);
         }
@@ -205,12 +326,7 @@ export const initLeafletFallbackMap = (
         }),
         onEachFeature: (_, layer) => {
           layer
-            .bindTooltip(
-              tooltipContent(feature),
-              transitLabelsVisible && feature.properties.category === 'transit'
-                ? transitTooltipOpts
-                : tooltipOpts,
-            )
+            .bindTooltip(tooltipContent(feature), tooltipOpts)
             .bindPopup(popupHtml(feature, locale));
           if (
             (feature.properties.category === 'food' || feature.properties.category === 'parking') &&
@@ -234,7 +350,7 @@ export const initLeafletFallbackMap = (
     });
   };
 
-  render({ searchText: '', categories: new Set(allFeatures.map((feature) => feature.properties.category)) });
+  render(lastOptions);
 
   return {
     applyFilters: render,
@@ -247,6 +363,10 @@ export const initLeafletFallbackMap = (
     },
     setEmojiEnabledCategories: (enabledCategories) => {
       emojiEnabledCategories = new Set(enabledCategories);
+      render(lastOptions);
+    },
+    setLabelEnabledCategories: (enabledCategories) => {
+      labelEnabledCategories = new Set(enabledCategories);
       render(lastOptions);
     },
     setWalkingRoute: (coordinates, animate) => {
@@ -313,6 +433,13 @@ export const initLeafletFallbackMap = (
       map.once('click', (event) => {
         onPick([event.latlng.lat, event.latlng.lng]);
       });
+    },
+    resetView: () => {
+      map.flyTo(MHH_CENTER, LEAFLET_MIN_ZOOM, { duration: 0.6 });
+    },
+    alignToReferenceOrientation: () => {
+      // Leaflet fallback does not support map bearing rotation.
+      map.flyTo(MHH_CENTER, LEAFLET_MIN_ZOOM, { duration: 0.6 });
     },
     focusFeature: (feature) => {
       const geometry = feature.geometry;

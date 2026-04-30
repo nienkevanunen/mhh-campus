@@ -1,7 +1,8 @@
 import { defineConfig } from 'vite';
 
 const normalizedBase = (() => {
-  const raw = process.env.VITE_BASE_PATH ?? '/';
+  const defaultBasePath = process.env.NODE_ENV === 'production' ? '/mhh-campus/' : '/';
+  const raw = process.env.VITE_BASE_PATH ?? defaultBasePath;
   if (raw === '/') {
     return raw;
   }

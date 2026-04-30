@@ -13,13 +13,16 @@
 body {
   margin: 0;
   min-width: 320px;
+  height: 100vh;
+  overflow: hidden;
 }
 
 #app {
-  min-height: 100vh;
+  height: 100vh;
 }
 
 .app-shell {
+  height: 100vh;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -82,15 +85,20 @@ body {
 .layout {
   display: grid;
   grid-template-columns: 320px 1fr;
+  height: 100%;
   min-height: 0;
   flex: 1;
+  overflow: hidden;
 }
 
 .sidebar {
   border-right: 1px solid #d6e0ea;
   background: #ffffff;
   padding: 1rem;
+  height: 100%;
+  max-height: 100%;
   overflow-y: auto;
+  min-height: 0;
 }
 
 h1 {
@@ -316,6 +324,27 @@ h2 {
   margin-bottom: 0.6rem;
 }
 
+.filter-section-title {
+  margin: 0.45rem 0 0.2rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.category-facilities-dropdown {
+  margin-top: 0.25rem;
+}
+
+.category-facilities-dropdown summary {
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 0.2rem;
+}
+
 .reset-btn {
   width: 100%;
   margin: 0 0 0.45rem;
@@ -360,6 +389,10 @@ h2 {
   color: #334155;
 }
 
+.mini-toggle-disabled {
+  opacity: 0.45;
+}
+
 .hint {
   margin-top: 1rem;
   color: #64748b;
@@ -391,7 +424,9 @@ h2 {
 }
 
 .map-wrap {
-  min-height: 100vh;
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
 }
 
 #map {
@@ -453,14 +488,24 @@ h2 {
 
 /* Leaflet hover tooltip */
 .campus-tooltip {
-  background: rgba(15, 23, 42, 0.88) !important;
   border: none !important;
   border-radius: 6px !important;
-  color: #f8fafc !important;
   font-size: 0.82rem;
   padding: 4px 8px !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) !important;
   white-space: nowrap;
+}
+
+.campus-tooltip-hover {
+  background: rgba(15, 23, 42, 0.88) !important;
+  color: #f8fafc !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) !important;
+}
+
+.campus-tooltip-permanent {
+  background: rgba(255, 255, 255, 0.9) !important;
+  color: #0f172a !important;
+  border: 1px solid rgba(148, 163, 184, 0.75) !important;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.15) !important;
 }
 
 .campus-tooltip::before {
@@ -523,7 +568,7 @@ h2 {
 
   .layout {
     grid-template-columns: 1fr;
-    grid-template-rows: auto minmax(420px, 1fr);
+    grid-template-rows: minmax(0, 1fr) minmax(420px, 1fr);
   }
 
   .sidebar {
@@ -587,4 +632,56 @@ h2 {
 .a11y-min-gpu .result-item {
   box-shadow: none !important;
   background: #ffffff !important;
+}
+
+/* Dark theme */
+.theme-dark {
+  color: #e2e8f0;
+  background: #0f172a;
+}
+
+.theme-dark body {
+  color: #e2e8f0;
+  background: #0f172a;
+}
+
+.theme-dark .topbar,
+.theme-dark .sidebar,
+.theme-dark .a11y-panel,
+.theme-dark .directions-panel,
+.theme-dark .weather-card,
+.theme-dark .filter-item-row,
+.theme-dark .result-item,
+.theme-dark .direction-match-item,
+.theme-dark .screen-reader-panel,
+.theme-dark .sr-item,
+.theme-dark .collapsible-panel,
+.theme-dark input[type='search'],
+.theme-dark select,
+.theme-dark .pick-btn,
+.theme-dark .reset-btn {
+  background: #111827 !important;
+  color: #e2e8f0 !important;
+  border-color: #334155 !important;
+}
+
+.theme-dark .subtitle,
+.theme-dark .hint,
+.theme-dark .weather-status,
+.theme-dark .result-item span,
+.theme-dark .topbar-control,
+.theme-dark .mini-toggle {
+  color: #94a3b8 !important;
+}
+
+.theme-dark .maplibregl-popup-content,
+.theme-dark .leaflet-popup-content-wrapper {
+  background: #111827 !important;
+  color: #e2e8f0 !important;
+}
+
+.theme-dark .campus-tooltip-permanent {
+  background: rgba(17, 24, 39, 0.9) !important;
+  color: #e2e8f0 !important;
+  border-color: rgba(100, 116, 139, 0.8) !important;
 }

@@ -21,6 +21,14 @@ This repository keeps things transparent and maintainable:
 - updates can be run with scripts
 - the final app is static and easy to host
 
+## Seasonal Overlay Storytelling
+
+Seasonal visuals can make a campus map more persuasive for prospective students and employees who are considering relocation.  
+Leaves changing color in fall, winter snow cover, and spring/summer greenery help people picture day-to-day campus life, not just navigation routes.
+
+For example, a college like Skidmore can keep its full wayfinding map (labels, search, routing) while applying a seasonal overlay that reflects the same campus across different times of year.  
+That subtle visual layer can help visitors compare campuses and imagine themselves living and studying there.
+
 ## Quick Start
 
 Requirements:
@@ -73,7 +81,15 @@ npm run prepare-data
 Create a production build:
 
 ```bash
+# set this for production so robots.txt + sitemap.xml contain the real domain
+export VITE_SITE_URL="https://your-domain.example"
 npm run build
+```
+
+For your GitHub Pages target (`https://nienkevanunen.github.io/mhh-campus/`), use:
+
+```bash
+npm run build:gh-pages
 ```
 
 Preview the production build locally:
@@ -83,3 +99,12 @@ npm run preview
 ```
 
 This project outputs static files in `dist/`, so it can be hosted on GitHub Pages, Vercel, or any static web server.
+
+## SEO Setup
+
+To make the page easier to discover by search engines:
+
+- the app includes richer HTML metadata (description, Open Graph, Twitter, structured data)
+- `npm run build` now generates `dist/robots.txt` and `dist/sitemap.xml`
+- set `VITE_SITE_URL` in your deploy environment (for example `https://campus-map.example`) so sitemap links use the correct public URL
+- for GitHub Pages project sites, also set `VITE_BASE_PATH` to your repo path (for example `/mhh-campus/`)

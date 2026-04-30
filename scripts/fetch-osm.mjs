@@ -26,6 +26,8 @@ const query = `
   relation["building"](${B});
   way["amenity"](${B});
   node["amenity"](${B});
+  node["entrance"](${B});
+  node["natural"="tree"](${B});
   node["healthcare"](${B});
   way["healthcare"](${B});
   node["public_transport"](${B});
@@ -38,6 +40,35 @@ out body;
 out skel qt;
 `.trim();
 
+const delay = (ms) => new Promise((resolve) => {
+  setTimeout(resolve, ms);
+});
+
+const fetchEndpointWithRetries = async (endpoint) => {
+  const maxAttempts = 3;
+  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    try {
+      const response = await fetch(endpoint, { signal: AbortSignal.timeout(45_000) });
+      if (response.ok) {
+        return response;
+      }
+      if (response.status !== 429) {
+        return response;
+      }
+      if (attempt < maxAttempts) {
+        const backoffMs = attempt * 3000;
+        await delay(backoffMs);
+      }
+    } catch {
+      if (attempt < maxAttempts) {
+        const backoffMs = attempt * 3000;
+        await delay(backoffMs);
+      }
+    }
+  }
+  return undefined;
+};
+
 const main = async () => {
   const encoded = encodeURIComponent(query);
   const endpoints = [
@@ -48,17 +79,17 @@ const main = async () => {
 
   let response;
   for (const endpoint of endpoints) {
-    try {
-      response = await fetch(endpoint, { signal: AbortSignal.timeout(45_000) });
-      if (response.ok) break;
-    } catch {
-      continue;
+    response = await fetchEndpointWithRetries(endpoint);
+    if (response?.ok) {
+      break;
     }
   }
 
   if (!response || !response.ok) {
     const code = response ? `${response.status} ${response.statusText}` : 'no-response';
-    throw new Error(`Overpass request failed (${code})`);
+    throw new Error(
+      `Overpass request failed (${code}). Try again in a few minutes, or run npm run prepare-data to keep using the latest local export.`,
+    );
   }
 
   const overpassData = await response.json();

@@ -2,14 +2,17 @@ import 'maplibre-gl/dist/maplibre-gl.css';
 import './style.css';
 import { renderAppShell, type RendererMode } from './app/ui';
 import { getWeatherUnit, renderWeather, WEATHER_UNIT_STORAGE_KEY, type TemperatureUnit } from './app/weather';
-import { hasWebGlSupport, initMap } from './map/initMap';
+import { hasWebGlSupport, initMap, type BasemapStyle, type ThemeMode } from './map/initMap';
 import {
   addCampusLayers,
   applyFeatureFilters,
+  alignToReferenceOrientation,
   closeDetailPopups,
   clearWalkingRoute,
   focusFeature,
+  resetMapView,
   setEmojiEnabledCategories,
+  setLabelEnabledCategories,
   setWalkingRoute,
   setThreeDViewEnabled,
   setTransitLabelsVisible,
@@ -22,6 +25,8 @@ import { setupCategoryFilters } from './ui/filters';
 import { setupSearch } from './ui/search';
 
 const RENDERER_STORAGE_KEY = 'mhh-renderer-mode';
+const BASEMAP_STORAGE_KEY = 'mhh-basemap-style';
+const THEME_STORAGE_KEY = 'mhh-theme-mode';
 const A11Y_PREFS_STORAGE_KEY = 'mhh-a11y-prefs';
 const locale = getLocale();
 
@@ -61,6 +66,18 @@ const getRendererMode = (): RendererMode => {
   const stored = localStorage.getItem(RENDERER_STORAGE_KEY);
   if (stored === 'maplibre' || stored === 'leaflet' || stored === 'auto') return stored;
   return 'auto';
+};
+
+const getBasemapStyle = (): BasemapStyle => {
+  const stored = localStorage.getItem(BASEMAP_STORAGE_KEY);
+  if (stored === 'light' || stored === 'osm') return stored;
+  return 'osm';
+};
+
+const getThemeMode = (): ThemeMode => {
+  const stored = localStorage.getItem(THEME_STORAGE_KEY);
+  if (stored === 'dark' || stored === 'light') return stored;
+  return 'light';
 };
 
 const loadCampusData = async (): Promise<{
@@ -104,7 +121,7 @@ const featureMatches = (feature: CampusFeature, categories: Set<string>, query: 
   const normalized = query.trim().toLowerCase();
   if (!normalized) return true;
   const haystack =
-    `${feature.properties.name} ${feature.properties.category} ${feature.properties.address} ${feature.properties.id}`.toLowerCase();
+    `${feature.properties.shortLabel ?? ''} ${feature.properties.name} ${feature.properties.category} ${feature.properties.address} ${feature.properties.id}`.toLowerCase();
   return normalized.split(/\s+/).every((term) => haystack.includes(term));
 };
 
@@ -148,6 +165,21 @@ const start = async (): Promise<void> => {
     localStorage.setItem(RENDERER_STORAGE_KEY, ui.rendererModeSelect.value);
     window.location.reload();
   });
+  const basemapStyle = getBasemapStyle();
+  ui.basemapStyleSelect.value = basemapStyle;
+  ui.basemapStyleSelect.addEventListener('change', () => {
+    const next = ui.basemapStyleSelect.value === 'light' ? 'light' : 'osm';
+    localStorage.setItem(BASEMAP_STORAGE_KEY, next);
+    window.location.reload();
+  });
+  const themeMode = getThemeMode();
+  document.documentElement.classList.toggle('theme-dark', themeMode === 'dark');
+  ui.themeModeSelect.value = themeMode;
+  ui.themeModeSelect.addEventListener('change', () => {
+    const nextTheme: ThemeMode = ui.themeModeSelect.value === 'dark' ? 'dark' : 'light';
+    localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
+    window.location.reload();
+  });
 
   const weatherUnit = getWeatherUnit();
   ui.weatherUnitSelect.value = weatherUnit;
@@ -161,8 +193,33 @@ const start = async (): Promise<void> => {
   const { poiData, buildingData } = await loadCampusData();
   const features = [...poiData.features, ...buildingData.features];
   const categories = [...new Set(features.map((f) => f.properties.category))].sort();
-  const defaultHiddenCategories = new Set(['benches', 'waste_baskets', 'shelter']);
+  const defaultHiddenCategories = new Set([
+    'entrance',
+    'benches',
+    'waste_baskets',
+    'shelter',
+    'postal',
+    'charging',
+    'bicycle',
+    'motorcycle',
+    'facilities',
+    'finance',
+  ]);
   const defaultEmojiDisabledCategories = new Set<string>(categories);
+  const defaultLabelDisabledCategories = new Set<string>([
+    'parking',
+    'entrance',
+    'trees',
+    'benches',
+    'waste_baskets',
+    'postal',
+    'shelter',
+    'charging',
+    'bicycle',
+    'motorcycle',
+    'facilities',
+    'finance',
+  ]);
 
   const getDefaultActiveCategories = (): Set<string> =>
     new Set(categories.filter((c) => !defaultHiddenCategories.has(c)));
@@ -171,6 +228,7 @@ const start = async (): Promise<void> => {
 
   let activeCategories = getDefaultActiveCategories();
   let emojiEnabledCategories = getDefaultEmojiEnabledCategories();
+  let labelEnabledCategories = new Set(categories.filter((c) => !defaultLabelDisabledCategories.has(c)));
   let currentSearch = '';
   let transitLabelsVisible = false;
   let threeDEnabled = false;
@@ -190,7 +248,7 @@ const start = async (): Promise<void> => {
 
   const mapController = !useLeaflet
     ? (() => {
-        const map = initMap('map');
+        const map = initMap('map', basemapStyle, themeMode);
         addCampusLayers(map, poiData, buildingData, locale);
         return {
           applyFilters: (searchText: string, categoriesArg: Set<string>) =>
@@ -199,9 +257,12 @@ const start = async (): Promise<void> => {
           setTransitLabelsVisible: (visible: boolean) => setTransitLabelsVisible(map, visible),
           setThreeDEnabled: (enabled: boolean) => setThreeDViewEnabled(map, enabled),
           setEmojiEnabledCategories: (enabled: Set<string>) => setEmojiEnabledCategories(map, enabled),
+          setLabelEnabledCategories: (enabled: Set<string>) => setLabelEnabledCategories(map, enabled),
           setWalkingRoute: (coordinates: [number, number][], animate: boolean) => setWalkingRoute(map, coordinates, animate),
           clearWalkingRoute: () => clearWalkingRoute(map),
           closeDetailPopups: () => closeDetailPopups(map),
+          resetMapView: () => resetMapView(map),
+          alignToReferenceOrientation: () => alignToReferenceOrientation(map),
           pickPointOnce: (onPick: (coords: [number, number]) => void) => {
             map.once('click', (event) => {
               onPick([event.lngLat.lat, event.lngLat.lng]);
@@ -219,7 +280,15 @@ const start = async (): Promise<void> => {
               ? 'WebGL ist nicht verfuegbar, daher ist Leaflet-Fallback aktiv.'
               : 'WebGL is unavailable, so Leaflet fallback mode is active.',
         );
-        const leafletMap = initLeafletFallbackMap('map', poiData, buildingData, locale);
+        const leafletMap = initLeafletFallbackMap(
+          'map',
+          poiData,
+          buildingData,
+          locale,
+          basemapStyle,
+          themeMode,
+          activeCategories,
+        );
         return {
           applyFilters: (searchText: string, categoriesArg: Set<string>) =>
             leafletMap.applyFilters({ searchText, categories: categoriesArg }),
@@ -227,9 +296,12 @@ const start = async (): Promise<void> => {
           setTransitLabelsVisible: (visible: boolean) => leafletMap.setTransitLabelsVisible(visible),
           setThreeDEnabled: (enabled: boolean) => leafletMap.setThreeDEnabled(enabled),
           setEmojiEnabledCategories: (enabled: Set<string>) => leafletMap.setEmojiEnabledCategories(enabled),
+          setLabelEnabledCategories: (enabled: Set<string>) => leafletMap.setLabelEnabledCategories(enabled),
           setWalkingRoute: (coordinates: [number, number][], animate: boolean) => leafletMap.setWalkingRoute(coordinates, animate),
           clearWalkingRoute: () => leafletMap.clearWalkingRoute(),
           closeDetailPopups: () => leafletMap.closeDetailPopups(),
+          resetMapView: () => leafletMap.resetView(),
+          alignToReferenceOrientation: () => leafletMap.alignToReferenceOrientation(),
           pickPointOnce: (onPick: (coords: [number, number]) => void) => leafletMap.pickPointOnce(onPick),
         };
       })();
@@ -290,6 +362,7 @@ const start = async (): Promise<void> => {
       categories,
       new Set(categories.filter((c) => !activeCategories.has(c))),
       new Set(categories.filter((c) => !emojiEnabledCategories.has(c))),
+      new Set(categories.filter((c) => !labelEnabledCategories.has(c))),
       locale,
       (nextVisible) => {
         activeCategories = nextVisible;
@@ -299,6 +372,11 @@ const start = async (): Promise<void> => {
       (nextEmojiEnabled) => {
         emojiEnabledCategories = nextEmojiEnabled;
         mapController.setEmojiEnabledCategories(emojiEnabledCategories);
+      },
+      (nextLabelEnabled) => {
+        labelEnabledCategories = nextLabelEnabled;
+        mapController.setLabelEnabledCategories(labelEnabledCategories);
+        syncFilters();
       },
     );
   };
@@ -519,9 +597,11 @@ const start = async (): Promise<void> => {
     ui.searchResults.innerHTML = '';
     activeCategories = getDefaultActiveCategories();
     emojiEnabledCategories = getDefaultEmojiEnabledCategories();
+    labelEnabledCategories = new Set(categories.filter((c) => !defaultLabelDisabledCategories.has(c)));
     renderCategoryFilterRows();
-    syncFilters();
     mapController.setEmojiEnabledCategories(emojiEnabledCategories);
+    mapController.setLabelEnabledCategories(labelEnabledCategories);
+    syncFilters();
     renderScreenReaderPanel();
   });
 
@@ -532,6 +612,17 @@ const start = async (): Promise<void> => {
   ui.view3DToggle.addEventListener('change', () => {
     threeDEnabled = ui.view3DToggle.checked;
     mapController.setThreeDEnabled(threeDEnabled);
+  });
+  ui.resetMapViewBtn.addEventListener('click', () => {
+    threeDEnabled = false;
+    ui.view3DToggle.checked = false;
+    mapController.resetMapView();
+    mapController.setThreeDEnabled(false);
+  });
+  ui.alignMapOrientationBtn.addEventListener('click', () => {
+    threeDEnabled = false;
+    ui.view3DToggle.checked = false;
+    mapController.alignToReferenceOrientation();
   });
 
   ui.a11yDyslexicToggle.checked = a11yPrefs.dyslexicFont;
@@ -574,10 +665,11 @@ const start = async (): Promise<void> => {
     },
   );
 
-  syncFilters();
   mapController.setTransitLabelsVisible(transitLabelsVisible);
   mapController.setThreeDEnabled(threeDEnabled);
   mapController.setEmojiEnabledCategories(emojiEnabledCategories);
+  mapController.setLabelEnabledCategories(labelEnabledCategories);
+  syncFilters();
   applyA11yClasses();
   renderScreenReaderPanel();
 };

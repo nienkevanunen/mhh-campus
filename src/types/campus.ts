@@ -11,6 +11,9 @@ export type CampusProps = {
   transitMode?: string;
   transitLines?: string;
   transitDirection?: string;
+  entranceType?: string;
+  wheelchair?: string;
+  shortLabel?: string;
   source: string;
   lastVerified: string;
 };

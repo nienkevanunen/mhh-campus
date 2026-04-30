@@ -1,12 +1,50 @@
 import maplibregl, { type LngLatBoundsLike, type Map } from 'maplibre-gl';
 
-const MHH_CENTER: [number, number] = [9.8049554, 52.383675];
+export const MHH_CENTER: [number, number] = [9.8049554, 52.383675];
 const MHH_BOUNDS: LngLatBoundsLike = [
-  [9.789, 52.374],
-  [9.821, 52.392],
+  [9.765, 52.355],
+  [9.845, 52.41],
 ];
-const MAPLIBRE_MIN_ZOOM = 12;
+export const MAPLIBRE_MIN_ZOOM = 11;
 const MAPLIBRE_MAX_ZOOM = 19;
+const MAPLIBRE_DEFAULT_ZOOM = 14;
+
+export type BasemapStyle = 'osm' | 'light';
+export type ThemeMode = 'light' | 'dark';
+
+const getBasemapConfig = (basemap: BasemapStyle, theme: ThemeMode): { tiles: string[]; attribution: string } => {
+  if (theme === 'dark') {
+    return {
+      tiles: [
+        'https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',
+        'https://b.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',
+        'https://c.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',
+        'https://d.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',
+      ],
+      attribution: '&copy; OpenStreetMap contributors, &copy; CARTO',
+    };
+  }
+  if (basemap === 'light') {
+    return {
+      tiles: [
+        'https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
+        'https://b.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
+        'https://c.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
+        'https://d.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
+      ],
+      attribution:
+        '&copy; OpenStreetMap contributors, &copy; CARTO',
+    };
+  }
+  return {
+    tiles: [
+      'https://a.tile.openstreetmap.org/{z}/{x}/{y}.png',
+      'https://b.tile.openstreetmap.org/{z}/{x}/{y}.png',
+      'https://c.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    ],
+    attribution: '&copy; OpenStreetMap contributors',
+  };
+};
 
 export const hasWebGlSupport = (): boolean => {
   const canvas = document.createElement('canvas');
@@ -20,31 +58,32 @@ export const hasWebGlSupport = (): boolean => {
   return Boolean(gl);
 };
 
-export const initMap = (containerId: string): Map => {
+export const initMap = (containerId: string, basemap: BasemapStyle, theme: ThemeMode): Map => {
+  const basemapConfig = getBasemapConfig(basemap, theme);
   const map = new maplibregl.Map({
     container: containerId,
     style: {
       version: 8,
       sources: {
-        osm: {
+        basemap: {
           type: 'raster',
-          tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],
+          tiles: basemapConfig.tiles,
           tileSize: 256,
-          attribution: '&copy; OpenStreetMap contributors',
+          attribution: basemapConfig.attribution,
         },
       },
       layers: [
         {
-          id: 'osm-raster',
+          id: 'basemap-raster',
           type: 'raster',
-          source: 'osm',
+          source: 'basemap',
           minzoom: 0,
           maxzoom: 19,
         },
       ],
     },
     center: MHH_CENTER,
-    zoom: MAPLIBRE_MIN_ZOOM,
+    zoom: MAPLIBRE_DEFAULT_ZOOM,
     minZoom: MAPLIBRE_MIN_ZOOM,
     maxZoom: MAPLIBRE_MAX_ZOOM,
     maxBounds: MHH_BOUNDS,

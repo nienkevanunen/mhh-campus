@@ -6,196 +6,20 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          9.8133979,
-          52.388677
-        ]
-      },
-      "properties": {
-        "id": "osm-838",
-        "name": "Roderbruchmarkt",
-        "category": "transit",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "transitMode": "tram",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           9.8085778,
           52.3841336
         ]
       },
       "properties": {
-        "id": "osm-839",
+        "id": "osm-223",
         "name": "Medizinische Hochschule",
         "category": "transit",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "transitMode": "tram/bus",
         "transitLines": "U4, 123, 137",
         "transitDirection": "towards Roderbruch (tram U4)",
+        "wheelchair": "yes",
         "source": "https://www.mhh.de/en/children-pneumology-allergology-and-neonatology/patients-visitors/location-and-directions",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8088463,
-          52.3790965
-        ]
-      },
-      "properties": {
-        "id": "osm-840",
-        "name": "Misburger Straße",
-        "category": "transit",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "transitMode": "bus",
-        "transitLines": "124, 127",
-        "transitDirection": "towards dental clinic access",
-        "source": "https://www.mhh.de/en/children-pneumology-allergology-and-neonatology/patients-visitors/location-and-directions",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8126254,
-          52.3798572
-        ]
-      },
-      "properties": {
-        "id": "osm-841",
-        "name": "Brela",
-        "category": "food",
-        "address": "Misburger Straße 88, 30625 Hannover",
-        "openingHours": "We-Sa 17:45-22:00; Su,PH 11:45-14:45,17:45-22:00; Mo,Tu off",
-        "phone": "+49 511 576151",
-        "website": "http://restaurant-brela.de/",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8107177,
-          52.3798888
-        ]
-      },
-      "properties": {
-        "id": "osm-842",
-        "name": "Ginkgo",
-        "category": "food",
-        "address": "Misburger Straße 81, 30625 Hannover",
-        "openingHours": "Tu-Su,PH 12:00-15:00,17:30-21:30",
-        "phone": "+49 511 98438333",
-        "website": "https://ginkgo-hannover.de",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8131898,
-          52.3798296
-        ]
-      },
-      "properties": {
-        "id": "osm-843",
-        "name": "post box 843",
-        "category": "postal",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "transitLines": "Misburger Str. 90, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.811119,
-          52.3799215
-        ]
-      },
-      "properties": {
-        "id": "osm-844",
-        "name": "TRIO Ristorantino Eiscafe und Bar",
-        "category": "food",
-        "address": "Misburger Straße 83, 30625 Hannover",
-        "openingHours": "Mo-Fr 11:30-14:00,17:30-22:00; Sa 17:30-22:00",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8120988,
-          52.3820779
-        ]
-      },
-      "properties": {
-        "id": "osm-845",
-        "name": "post box 845",
-        "category": "postal",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "transitLines": "Heidering 23, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8130107,
-          52.3799744
-        ]
-      },
-      "properties": {
-        "id": "osm-846",
-        "name": "Heidesiedlung",
-        "category": "institute",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "transitLines": "34",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8091552,
-          52.3885189
-        ]
-      },
-      "properties": {
-        "id": "osm-847",
-        "name": "Roderbruch",
-        "category": "institute",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "transitLines": "33",
-        "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
       }
     },
@@ -209,11 +33,10 @@
         ]
       },
       "properties": {
-        "id": "osm-848",
+        "id": "osm-224",
         "name": "TUI",
         "category": "institute",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "transitLines": "19",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
       }
@@ -228,7 +51,7 @@
         ]
       },
       "properties": {
-        "id": "osm-849",
+        "id": "osm-225",
         "name": "Polizeistation Kleefeld",
         "category": "institute",
         "address": "Fuhrberger Straße, 30625 Hannover",
@@ -247,55 +70,14 @@
         ]
       },
       "properties": {
-        "id": "osm-850",
+        "id": "osm-226",
         "name": "Nobelring",
         "category": "transit",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "transitMode": "bus",
         "transitLines": "123, 137",
+        "wheelchair": "yes",
         "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8097642,
-          52.384129
-        ]
-      },
-      "properties": {
-        "id": "osm-851",
-        "name": "Medizinische Hochschule",
-        "category": "transit",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "transitMode": "tram/bus",
-        "transitLines": "U4, 123, 137",
-        "transitDirection": "towards Roderbruch (tram U4)",
-        "source": "https://www.mhh.de/en/children-pneumology-allergology-and-neonatology/patients-visitors/location-and-directions",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8098715,
-          52.3846262
-        ]
-      },
-      "properties": {
-        "id": "osm-852",
-        "name": "Medizinische Hochschule",
-        "category": "transit",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "transitMode": "tram/bus",
-        "transitLines": "U4, 123, 137",
-        "transitDirection": "towards Roderbruch (tram U4)",
-        "source": "https://www.mhh.de/en/children-pneumology-allergology-and-neonatology/patients-visitors/location-and-directions",
         "lastVerified": "2026-04-30"
       }
     },
@@ -309,11 +91,10 @@
         ]
       },
       "properties": {
-        "id": "osm-853",
-        "name": "post box 853",
+        "id": "osm-227",
+        "name": "post box 227",
         "category": "postal",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "transitLines": "Berckhusenstr. 129, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
       }
@@ -328,26 +109,7 @@
         ]
       },
       "properties": {
-        "id": "osm-854",
-        "name": "Heidjerhof",
-        "category": "transit",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "transitMode": "bus",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8024991,
-          52.3772992
-        ]
-      },
-      "properties": {
-        "id": "osm-855",
+        "id": "osm-228",
         "name": "Heidjerhof",
         "category": "transit",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
@@ -366,11 +128,12 @@
         ]
       },
       "properties": {
-        "id": "osm-856",
+        "id": "osm-230",
         "name": "Shell",
         "category": "institute",
         "address": "Berckhusenstraße 149, 30625 Hannover",
         "openingHours": "Mo-Fr 07:00-21:00; Sa 08:00-21:00; Su 09:00-18:00",
+        "wheelchair": "yes",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
       }
@@ -385,30 +148,10 @@
         ]
       },
       "properties": {
-        "id": "osm-857",
-        "name": "post box 857",
+        "id": "osm-231",
+        "name": "post box 231",
         "category": "postal",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "transitLines": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8024646,
-          52.3773587
-        ]
-      },
-      "properties": {
-        "id": "osm-858",
-        "name": "Heidjerhof",
-        "category": "transit",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "transitMode": "bus",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
       }
@@ -423,7 +166,7 @@
         ]
       },
       "properties": {
-        "id": "osm-859",
+        "id": "osm-233",
         "name": "MHH-Zahnklinik",
         "category": "institute",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
@@ -441,11 +184,10 @@
         ]
       },
       "properties": {
-        "id": "osm-860",
-        "name": "post box 860",
+        "id": "osm-234",
+        "name": "post box 234",
         "category": "postal",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "transitLines": "Lathusenstr. 15, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
       }
@@ -460,27 +202,9 @@
         ]
       },
       "properties": {
-        "id": "osm-861",
-        "name": "recycling 861",
+        "id": "osm-235",
+        "name": "recycling 235",
         "category": "facilities",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8089214,
-          52.379427
-        ]
-      },
-      "properties": {
-        "id": "osm-862",
-        "name": "clock 862",
-        "category": "institute",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
@@ -496,49 +220,12 @@
         ]
       },
       "properties": {
-        "id": "osm-863",
+        "id": "osm-236",
         "name": "Internationales Christliches Zentrum Hannover",
         "category": "institute",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "website": "https://icz-hannover.jimdo.com",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8132062,
-          52.380051
-        ]
-      },
-      "properties": {
-        "id": "osm-864",
-        "name": "Fahrschule Eilers",
-        "category": "institute",
-        "address": "Misburger Straße 90, 30625 Hannover",
-        "openingHours": "Tu,Th 16:30-18:30",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8133017,
-          52.3799265
-        ]
-      },
-      "properties": {
-        "id": "osm-865",
-        "name": "post office 865",
-        "category": "postal",
-        "address": "Misburger Straße 90, 30625 Hannover",
-        "openingHours": "Mo-Su 08:00-21:00",
+        "wheelchair": "yes",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
       }
@@ -553,8 +240,8 @@
         ]
       },
       "properties": {
-        "id": "osm-866",
-        "name": "bench 866",
+        "id": "osm-237",
+        "name": "bench 237",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -571,27 +258,9 @@
         ]
       },
       "properties": {
-        "id": "osm-867",
-        "name": "bench 867",
+        "id": "osm-238",
+        "name": "bench 238",
         "category": "benches",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8110446,
-          52.3782285
-        ]
-      },
-      "properties": {
-        "id": "osm-868",
-        "name": "parking 868",
-        "category": "parking",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
@@ -607,8 +276,8 @@
         ]
       },
       "properties": {
-        "id": "osm-869",
-        "name": "recycling 869",
+        "id": "osm-239",
+        "name": "recycling 239",
         "category": "facilities",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -625,8 +294,8 @@
         ]
       },
       "properties": {
-        "id": "osm-870",
-        "name": "parking 870",
+        "id": "osm-240",
+        "name": "parking 240",
         "category": "parking",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -643,8 +312,8 @@
         ]
       },
       "properties": {
-        "id": "osm-871",
-        "name": "parking 871",
+        "id": "osm-241",
+        "name": "parking 241",
         "category": "parking",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -661,8 +330,8 @@
         ]
       },
       "properties": {
-        "id": "osm-872",
-        "name": "parking entrance 872",
+        "id": "osm-242",
+        "name": "parking entrance 242",
         "category": "parking",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -679,8 +348,8 @@
         ]
       },
       "properties": {
-        "id": "osm-873",
-        "name": "parking entrance 873",
+        "id": "osm-243",
+        "name": "parking entrance 243",
         "category": "parking",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -697,8 +366,8 @@
         ]
       },
       "properties": {
-        "id": "osm-874",
-        "name": "parking entrance 874",
+        "id": "osm-244",
+        "name": "parking entrance 244",
         "category": "parking",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -715,8 +384,8 @@
         ]
       },
       "properties": {
-        "id": "osm-875",
-        "name": "car wash 875",
+        "id": "osm-245",
+        "name": "car wash 245",
         "category": "institute",
         "address": "Berckhusenstraße, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -733,8 +402,8 @@
         ]
       },
       "properties": {
-        "id": "osm-876",
-        "name": "waste basket 876",
+        "id": "osm-246",
+        "name": "waste basket 246",
         "category": "waste_baskets",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -751,8 +420,8 @@
         ]
       },
       "properties": {
-        "id": "osm-877",
-        "name": "bicycle parking 877",
+        "id": "osm-247",
+        "name": "bicycle parking 247",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -769,29 +438,10 @@
         ]
       },
       "properties": {
-        "id": "osm-878",
-        "name": "bench 878",
+        "id": "osm-248",
+        "name": "bench 248",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8119975,
-          52.3888575
-        ]
-      },
-      "properties": {
-        "id": "osm-879",
-        "name": "Fahrschule Roderbruch",
-        "category": "institute",
-        "address": "Roderbruchmarkt 8, 30627 Hannover",
-        "openingHours": "Mo-Fr 11:00-18:30; Sa 11:00-16:00",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
       }
@@ -806,70 +456,15 @@
         ]
       },
       "properties": {
-        "id": "osm-880",
+        "id": "osm-249",
         "name": "Misburger Straße",
         "category": "transit",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "transitMode": "bus",
         "transitLines": "124, 127",
         "transitDirection": "towards dental clinic access",
+        "wheelchair": "yes",
         "source": "https://www.mhh.de/en/children-pneumology-allergology-and-neonatology/patients-visitors/location-and-directions",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8085723,
-          52.3791362
-        ]
-      },
-      "properties": {
-        "id": "osm-881",
-        "name": "vending machine 881",
-        "category": "facilities",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "transitLines": "FKA242",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8131964,
-          52.3887482
-        ]
-      },
-      "properties": {
-        "id": "osm-882",
-        "name": "toilets 882",
-        "category": "facilities",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8133902,
-          52.3887082
-        ]
-      },
-      "properties": {
-        "id": "osm-883",
-        "name": "Roderbruchmarkt",
-        "category": "transit",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "transitMode": "tram",
-        "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
       }
     },
@@ -883,8 +478,8 @@
         ]
       },
       "properties": {
-        "id": "osm-884",
-        "name": "shelter 884",
+        "id": "osm-250",
+        "name": "shelter 250",
         "category": "shelter",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -901,13 +496,14 @@
         ]
       },
       "properties": {
-        "id": "osm-885",
+        "id": "osm-251",
         "name": "Kannelloni",
         "category": "food",
         "address": "Carl-Neuberg-Straße 1, 30625 Hannover",
         "openingHours": "Mo-Fr 08:30-19:00; Sa,Su 11:00-18:00",
         "phone": "+49 511 53897350",
         "website": "https://kanne-group.com/de/kannelloni-food-market-2",
+        "wheelchair": "yes",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
       }
@@ -922,11 +518,12 @@
         ]
       },
       "properties": {
-        "id": "osm-886",
+        "id": "osm-252",
         "name": "Sparkasse",
         "category": "finance",
         "address": "Carl-Neuberg-Straße 1, 30625 Hannover",
         "openingHours": "PH,Mo-Su 00:00-24:00",
+        "wheelchair": "yes",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
       }
@@ -941,28 +538,11 @@
         ]
       },
       "properties": {
-        "id": "osm-887",
+        "id": "osm-253",
         "name": "Kanne",
         "category": "food",
         "address": "Carl-Neuberg-Straße 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.805311,
-          52.381805
-        ]
-      },
-      "properties": {
-        "id": "osm-888",
-        "name": "K11 - Frauenklinik / Viszeral- und Transplantationschirurgie",
-        "category": "food",
-        "address": "Carl-Neuberg-Straße 1, 30625 Hannover",
+        "wheelchair": "yes",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
       }
@@ -977,8 +557,8 @@
         ]
       },
       "properties": {
-        "id": "osm-889",
-        "name": "bicycle parking 889",
+        "id": "osm-255",
+        "name": "bicycle parking 255",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -995,8 +575,8 @@
         ]
       },
       "properties": {
-        "id": "osm-890",
-        "name": "bench 890",
+        "id": "osm-256",
+        "name": "bench 256",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -1013,8 +593,8 @@
         ]
       },
       "properties": {
-        "id": "osm-891",
-        "name": "bench 891",
+        "id": "osm-257",
+        "name": "bench 257",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -1031,8 +611,8 @@
         ]
       },
       "properties": {
-        "id": "osm-892",
-        "name": "bicycle parking 892",
+        "id": "osm-258",
+        "name": "bicycle parking 258",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -1049,8 +629,8 @@
         ]
       },
       "properties": {
-        "id": "osm-893",
-        "name": "bicycle parking 893",
+        "id": "osm-259",
+        "name": "bicycle parking 259",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -1067,8 +647,8 @@
         ]
       },
       "properties": {
-        "id": "osm-894",
-        "name": "bicycle parking 894",
+        "id": "osm-260",
+        "name": "bicycle parking 260",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -1085,8 +665,8 @@
         ]
       },
       "properties": {
-        "id": "osm-895",
-        "name": "waste basket 895",
+        "id": "osm-261",
+        "name": "waste basket 261",
         "category": "waste_baskets",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -1103,8 +683,8 @@
         ]
       },
       "properties": {
-        "id": "osm-896",
-        "name": "waste basket 896",
+        "id": "osm-262",
+        "name": "waste basket 262",
         "category": "waste_baskets",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -1121,8 +701,8 @@
         ]
       },
       "properties": {
-        "id": "osm-897",
-        "name": "waste basket 897",
+        "id": "osm-263",
+        "name": "waste basket 263",
         "category": "waste_baskets",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -1139,8 +719,8 @@
         ]
       },
       "properties": {
-        "id": "osm-898",
-        "name": "bench 898",
+        "id": "osm-264",
+        "name": "bench 264",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -1157,8 +737,8 @@
         ]
       },
       "properties": {
-        "id": "osm-899",
-        "name": "waste basket 899",
+        "id": "osm-265",
+        "name": "waste basket 265",
         "category": "waste_baskets",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -1175,8 +755,8 @@
         ]
       },
       "properties": {
-        "id": "osm-900",
-        "name": "bench 900",
+        "id": "osm-266",
+        "name": "bench 266",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -1193,8 +773,8 @@
         ]
       },
       "properties": {
-        "id": "osm-901",
-        "name": "bench 901",
+        "id": "osm-267",
+        "name": "bench 267",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -1211,8 +791,8 @@
         ]
       },
       "properties": {
-        "id": "osm-902",
-        "name": "bench 902",
+        "id": "osm-268",
+        "name": "bench 268",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -1229,8 +809,8 @@
         ]
       },
       "properties": {
-        "id": "osm-903",
-        "name": "bench 903",
+        "id": "osm-269",
+        "name": "bench 269",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -1247,8 +827,8 @@
         ]
       },
       "properties": {
-        "id": "osm-904",
-        "name": "bench 904",
+        "id": "osm-270",
+        "name": "bench 270",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -1265,8 +845,8 @@
         ]
       },
       "properties": {
-        "id": "osm-905",
-        "name": "bench 905",
+        "id": "osm-271",
+        "name": "bench 271",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -1283,8 +863,8 @@
         ]
       },
       "properties": {
-        "id": "osm-906",
-        "name": "bench 906",
+        "id": "osm-272",
+        "name": "bench 272",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -1301,8 +881,8 @@
         ]
       },
       "properties": {
-        "id": "osm-907",
-        "name": "bench 907",
+        "id": "osm-273",
+        "name": "bench 273",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -1319,8 +899,8 @@
         ]
       },
       "properties": {
-        "id": "osm-908",
-        "name": "waste basket 908",
+        "id": "osm-274",
+        "name": "waste basket 274",
         "category": "waste_baskets",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -1337,8 +917,8 @@
         ]
       },
       "properties": {
-        "id": "osm-909",
-        "name": "bench 909",
+        "id": "osm-275",
+        "name": "bench 275",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -1355,100 +935,9 @@
         ]
       },
       "properties": {
-        "id": "osm-910",
-        "name": "bench 910",
+        "id": "osm-276",
+        "name": "bench 276",
         "category": "benches",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8134219,
-          52.3887406
-        ]
-      },
-      "properties": {
-        "id": "osm-911",
-        "name": "waste basket 911",
-        "category": "waste_baskets",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8128329,
-          52.3881213
-        ]
-      },
-      "properties": {
-        "id": "osm-912",
-        "name": "charging station 912",
-        "category": "charging",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8134993,
-          52.3883622
-        ]
-      },
-      "properties": {
-        "id": "osm-913",
-        "name": "toilets 913",
-        "category": "facilities",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8130847,
-          52.3883987
-        ]
-      },
-      "properties": {
-        "id": "osm-914",
-        "name": "fast food 914",
-        "category": "food",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "openingHours": "Mo-Sa 07:00-20:00; PH off",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8112255,
-          52.388868
-        ]
-      },
-      "properties": {
-        "id": "osm-915",
-        "name": "waste basket 915",
-        "category": "waste_baskets",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
@@ -1464,10 +953,11 @@
         ]
       },
       "properties": {
-        "id": "osm-916",
-        "name": "bench 916",
+        "id": "osm-277",
+        "name": "bench 277",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
+        "wheelchair": "yes",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
       }
@@ -1482,191 +972,11 @@
         ]
       },
       "properties": {
-        "id": "osm-917",
-        "name": "bicycle parking 917",
+        "id": "osm-278",
+        "name": "bicycle parking 278",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8107163,
-          52.3860797
-        ]
-      },
-      "properties": {
-        "id": "osm-918",
-        "name": "bicycle parking 918",
-        "category": "bicycle",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8106483,
-          52.3854692
-        ]
-      },
-      "properties": {
-        "id": "osm-919",
-        "name": "bicycle parking 919",
-        "category": "bicycle",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8106839,
-          52.386401
-        ]
-      },
-      "properties": {
-        "id": "osm-920",
-        "name": "charging station 920",
-        "category": "charging",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8119822,
-          52.382114
-        ]
-      },
-      "properties": {
-        "id": "osm-921",
-        "name": "parcel locker 921",
-        "category": "postal",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8131898,
-          52.3830998
-        ]
-      },
-      "properties": {
-        "id": "osm-922",
-        "name": "bench 922",
-        "category": "benches",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8129125,
-          52.3794839
-        ]
-      },
-      "properties": {
-        "id": "osm-923",
-        "name": "Sparkasse",
-        "category": "finance",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "openingHours": "Mo,Th 09:00-13:00, Th 14:30-19:00",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8135857,
-          52.3829002
-        ]
-      },
-      "properties": {
-        "id": "osm-924",
-        "name": "bench 924",
-        "category": "benches",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8124016,
-          52.386994
-        ]
-      },
-      "properties": {
-        "id": "osm-925",
-        "name": "recycling 925",
-        "category": "facilities",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8124305,
-          52.3869545
-        ]
-      },
-      "properties": {
-        "id": "osm-926",
-        "name": "recycling 926",
-        "category": "facilities",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8104539,
-          52.3841517
-        ]
-      },
-      "properties": {
-        "id": "osm-927",
-        "name": "parking 927",
-        "category": "parking",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
+        "wheelchair": "limited",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
       }
@@ -1681,11 +991,12 @@
         ]
       },
       "properties": {
-        "id": "osm-928",
-        "name": "vending machine 928",
+        "id": "osm-279",
+        "name": "vending machine 279",
         "category": "facilities",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "website": "https://www.mhh.de",
+        "wheelchair": "yes",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
       }
@@ -1700,26 +1011,8 @@
         ]
       },
       "properties": {
-        "id": "osm-929",
+        "id": "osm-280",
         "name": "MHH-Haupteingang",
-        "category": "institute",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8097277,
-          52.3864377
-        ]
-      },
-      "properties": {
-        "id": "osm-930",
-        "name": "Ge-Los",
         "category": "institute",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -1736,12 +1029,13 @@
         ]
       },
       "properties": {
-        "id": "osm-931",
-        "name": "vending machine 931",
+        "id": "osm-281",
+        "name": "vending machine 281",
         "category": "facilities",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "phone": "+49 511 532 0",
         "website": "https://www.mhh.de",
+        "wheelchair": "limited",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
       }
@@ -1756,49 +1050,11 @@
         ]
       },
       "properties": {
-        "id": "osm-932",
-        "name": "motorcycle parking 932",
-        "category": "institute",
+        "id": "osm-282",
+        "name": "motorcycle parking 282",
+        "category": "motorcycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8085467,
-          52.3841278
-        ]
-      },
-      "properties": {
-        "id": "osm-933",
-        "name": "Medizinische Hochschule",
-        "category": "transit",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "transitMode": "tram/bus",
-        "transitLines": "U4, 123, 137",
-        "transitDirection": "towards Roderbruch (tram U4)",
-        "source": "https://www.mhh.de/en/children-pneumology-allergology-and-neonatology/patients-visitors/location-and-directions",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8097507,
-          52.3836102
-        ]
-      },
-      "properties": {
-        "id": "osm-934",
-        "name": "fountain 934",
-        "category": "institute",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
+        "wheelchair": "yes",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
       }
@@ -1813,8 +1069,8 @@
         ]
       },
       "properties": {
-        "id": "osm-935",
-        "name": "post box 935",
+        "id": "osm-284",
+        "name": "post box 284",
         "category": "postal",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -1831,28 +1087,9 @@
         ]
       },
       "properties": {
-        "id": "osm-936",
-        "name": "post box 936",
+        "id": "osm-285",
+        "name": "post box 285",
         "category": "postal",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "transitLines": "Nikolai-Fuchs-Str. 34, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8136879,
-          52.3888445
-        ]
-      },
-      "properties": {
-        "id": "osm-937",
-        "name": "telephone 937",
-        "category": "institute",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
@@ -1868,8 +1105,8 @@
         ]
       },
       "properties": {
-        "id": "osm-938",
-        "name": "post box 938",
+        "id": "osm-286",
+        "name": "post box 286",
         "category": "postal",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -1886,11 +1123,10 @@
         ]
       },
       "properties": {
-        "id": "osm-939",
-        "name": "vending machine 939",
+        "id": "osm-287",
+        "name": "vending machine 287",
         "category": "facilities",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "transitLines": "FKA124",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
       }
@@ -1905,134 +1141,11 @@
         ]
       },
       "properties": {
-        "id": "osm-940",
-        "name": "vending machine 940",
+        "id": "osm-288",
+        "name": "vending machine 288",
         "category": "facilities",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "transitLines": "FKA123",
         "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8135182,
-          52.3887729
-        ]
-      },
-      "properties": {
-        "id": "osm-941",
-        "name": "vending machine 941",
-        "category": "facilities",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "transitLines": "FKA125",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8068887,
-          52.3885132
-        ]
-      },
-      "properties": {
-        "id": "osm-942",
-        "name": "Nobelring",
-        "category": "transit",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "transitMode": "bus",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8098311,
-          52.3841297
-        ]
-      },
-      "properties": {
-        "id": "osm-943",
-        "name": "Medizinische Hochschule",
-        "category": "transit",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "transitMode": "tram/bus",
-        "transitLines": "U4, 123, 137",
-        "transitDirection": "towards Roderbruch (tram U4)",
-        "source": "https://www.mhh.de/en/children-pneumology-allergology-and-neonatology/patients-visitors/location-and-directions",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8097714,
-          52.384588
-        ]
-      },
-      "properties": {
-        "id": "osm-944",
-        "name": "Medizinische Hochschule",
-        "category": "transit",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "transitMode": "tram/bus",
-        "transitLines": "U4, 123, 137",
-        "transitDirection": "towards Roderbruch (tram U4)",
-        "source": "https://www.mhh.de/en/children-pneumology-allergology-and-neonatology/patients-visitors/location-and-directions",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8087114,
-          52.3790264
-        ]
-      },
-      "properties": {
-        "id": "osm-945",
-        "name": "Misburger Straße",
-        "category": "transit",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "transitMode": "bus",
-        "transitLines": "124, 127",
-        "transitDirection": "towards dental clinic access",
-        "source": "https://www.mhh.de/en/children-pneumology-allergology-and-neonatology/patients-visitors/location-and-directions",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8087591,
-          52.3792304
-        ]
-      },
-      "properties": {
-        "id": "osm-946",
-        "name": "Misburger Straße",
-        "category": "transit",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "transitMode": "bus",
-        "transitLines": "124, 127",
-        "transitDirection": "towards dental clinic access",
-        "source": "https://www.mhh.de/en/children-pneumology-allergology-and-neonatology/patients-visitors/location-and-directions",
         "lastVerified": "2026-04-30"
       }
     },
@@ -2046,8 +1159,8 @@
         ]
       },
       "properties": {
-        "id": "osm-947",
-        "name": "bench 947",
+        "id": "osm-290",
+        "name": "bench 290",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -2064,8 +1177,8 @@
         ]
       },
       "properties": {
-        "id": "osm-948",
-        "name": "bench 948",
+        "id": "osm-291",
+        "name": "bench 291",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -2082,8 +1195,8 @@
         ]
       },
       "properties": {
-        "id": "osm-949",
-        "name": "bench 949",
+        "id": "osm-292",
+        "name": "bench 292",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -2100,8 +1213,8 @@
         ]
       },
       "properties": {
-        "id": "osm-950",
-        "name": "bench 950",
+        "id": "osm-293",
+        "name": "bench 293",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -2118,8 +1231,8 @@
         ]
       },
       "properties": {
-        "id": "osm-951",
-        "name": "bicycle parking 951",
+        "id": "osm-294",
+        "name": "bicycle parking 294",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -2136,50 +1249,10 @@
         ]
       },
       "properties": {
-        "id": "osm-952",
-        "name": "bicycle parking 952",
+        "id": "osm-295",
+        "name": "bicycle parking 295",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.813029,
-          52.3802631
-        ]
-      },
-      "properties": {
-        "id": "osm-953",
-        "name": "Heidering",
-        "category": "transit",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "transitMode": "bus",
-        "transitLines": "124, 127",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.812106,
-          52.379993
-        ]
-      },
-      "properties": {
-        "id": "osm-954",
-        "name": "Heidering",
-        "category": "transit",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "transitMode": "bus",
-        "transitLines": "124, 127",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
       }
@@ -2194,8 +1267,8 @@
         ]
       },
       "properties": {
-        "id": "osm-955",
-        "name": "bench 955",
+        "id": "osm-296",
+        "name": "bench 296",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -2212,8 +1285,8 @@
         ]
       },
       "properties": {
-        "id": "osm-956",
-        "name": "bicycle parking 956",
+        "id": "osm-297",
+        "name": "bicycle parking 297",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -2230,26 +1303,8 @@
         ]
       },
       "properties": {
-        "id": "osm-957",
-        "name": "bicycle parking 957",
-        "category": "bicycle",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8093762,
-          52.3838147
-        ]
-      },
-      "properties": {
-        "id": "osm-958",
-        "name": "bicycle parking 958",
+        "id": "osm-298",
+        "name": "bicycle parking 298",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -2266,9 +1321,9 @@
         ]
       },
       "properties": {
-        "id": "osm-959",
-        "name": "waste disposal 959",
-        "category": "institute",
+        "id": "osm-299",
+        "name": "waste disposal 299",
+        "category": "facilities",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
@@ -2284,8 +1339,8 @@
         ]
       },
       "properties": {
-        "id": "osm-960",
-        "name": "bench 960",
+        "id": "osm-300",
+        "name": "bench 300",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -2302,8 +1357,8 @@
         ]
       },
       "properties": {
-        "id": "osm-961",
-        "name": "waste basket 961",
+        "id": "osm-301",
+        "name": "waste basket 301",
         "category": "waste_baskets",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -2320,8 +1375,8 @@
         ]
       },
       "properties": {
-        "id": "osm-962",
-        "name": "waste basket 962",
+        "id": "osm-302",
+        "name": "waste basket 302",
         "category": "waste_baskets",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -2338,8 +1393,8 @@
         ]
       },
       "properties": {
-        "id": "osm-963",
-        "name": "waste basket 963",
+        "id": "osm-303",
+        "name": "waste basket 303",
         "category": "waste_baskets",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -2356,8 +1411,8 @@
         ]
       },
       "properties": {
-        "id": "osm-964",
-        "name": "bench 964",
+        "id": "osm-304",
+        "name": "bench 304",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -2374,8 +1429,8 @@
         ]
       },
       "properties": {
-        "id": "osm-965",
-        "name": "bench 965",
+        "id": "osm-305",
+        "name": "bench 305",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -2392,8 +1447,8 @@
         ]
       },
       "properties": {
-        "id": "osm-966",
-        "name": "waste basket 966",
+        "id": "osm-306",
+        "name": "waste basket 306",
         "category": "waste_baskets",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -2410,8 +1465,8 @@
         ]
       },
       "properties": {
-        "id": "osm-967",
-        "name": "bench 967",
+        "id": "osm-307",
+        "name": "bench 307",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -2428,48 +1483,10 @@
         ]
       },
       "properties": {
-        "id": "osm-968",
-        "name": "waste basket 968",
+        "id": "osm-308",
+        "name": "waste basket 308",
         "category": "waste_baskets",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8052948,
-          52.3863484
-        ]
-      },
-      "properties": {
-        "id": "osm-969",
-        "name": "bicycle parking 969",
-        "category": "bicycle",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "transitLines": "Z2",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8056089,
-          52.3864327
-        ]
-      },
-      "properties": {
-        "id": "osm-970",
-        "name": "bicycle parking 970",
-        "category": "bicycle",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "transitLines": "Z2",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
       }
@@ -2484,8 +1501,8 @@
         ]
       },
       "properties": {
-        "id": "osm-971",
-        "name": "bicycle parking 971",
+        "id": "osm-311",
+        "name": "bicycle parking 311",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -2502,8 +1519,8 @@
         ]
       },
       "properties": {
-        "id": "osm-972",
-        "name": "bicycle parking 972",
+        "id": "osm-312",
+        "name": "bicycle parking 312",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -2520,8 +1537,8 @@
         ]
       },
       "properties": {
-        "id": "osm-973",
-        "name": "bicycle parking 973",
+        "id": "osm-313",
+        "name": "bicycle parking 313",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -2538,8 +1555,8 @@
         ]
       },
       "properties": {
-        "id": "osm-974",
-        "name": "bicycle parking 974",
+        "id": "osm-314",
+        "name": "bicycle parking 314",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -2556,27 +1573,9 @@
         ]
       },
       "properties": {
-        "id": "osm-975",
-        "name": "compressed air 975",
+        "id": "osm-315",
+        "name": "compressed air 315",
         "category": "institute",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8128482,
-          52.3884059
-        ]
-      },
-      "properties": {
-        "id": "osm-976",
-        "name": "bicycle parking 976",
-        "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
@@ -2592,8 +1591,8 @@
         ]
       },
       "properties": {
-        "id": "osm-977",
-        "name": "bench 977",
+        "id": "osm-316",
+        "name": "bench 316",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -2610,48 +1609,9 @@
         ]
       },
       "properties": {
-        "id": "osm-978",
-        "name": "bench 978",
+        "id": "osm-317",
+        "name": "bench 317",
         "category": "benches",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.813145,
-          52.3805634
-        ]
-      },
-      "properties": {
-        "id": "osm-979",
-        "name": "Apotheke am Heidering",
-        "category": "clinic",
-        "address": "Heidering 2, 30625 Hannover",
-        "openingHours": "Mo-Fr 08:00-19:00; Sa 08:30-14:00",
-        "phone": "+49 511 76835601",
-        "website": "https://apotheke-am-heidering.de/",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8091254,
-          52.3888784
-        ]
-      },
-      "properties": {
-        "id": "osm-980",
-        "name": "recycling 980",
-        "category": "facilities",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
@@ -2667,8 +1627,8 @@
         ]
       },
       "properties": {
-        "id": "osm-981",
-        "name": "bicycle repair station 981",
+        "id": "osm-318",
+        "name": "bicycle repair station 318",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "openingHours": "24/7",
@@ -2686,8 +1646,8 @@
         ]
       },
       "properties": {
-        "id": "osm-982",
-        "name": "bench 982",
+        "id": "osm-319",
+        "name": "bench 319",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -2704,8 +1664,8 @@
         ]
       },
       "properties": {
-        "id": "osm-983",
-        "name": "bench 983",
+        "id": "osm-320",
+        "name": "bench 320",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -2722,9 +1682,9 @@
         ]
       },
       "properties": {
-        "id": "osm-984",
-        "name": "smoking area 984",
-        "category": "institute",
+        "id": "osm-321",
+        "name": "smoking area 321",
+        "category": "facilities",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
@@ -2740,87 +1700,9 @@
         ]
       },
       "properties": {
-        "id": "osm-985",
-        "name": "vending machine 985",
+        "id": "osm-322",
+        "name": "vending machine 322",
         "category": "facilities",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8086261,
-          52.3791289
-        ]
-      },
-      "properties": {
-        "id": "osm-986",
-        "name": "Misburger Straße",
-        "category": "transit",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "transitMode": "bus",
-        "transitLines": "124, 127",
-        "transitDirection": "towards dental clinic access",
-        "source": "https://www.mhh.de/en/children-pneumology-allergology-and-neonatology/patients-visitors/location-and-directions",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8085829,
-          52.3789251
-        ]
-      },
-      "properties": {
-        "id": "osm-987",
-        "name": "Misburger Straße",
-        "category": "transit",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "transitMode": "bus",
-        "transitLines": "124, 127",
-        "transitDirection": "towards dental clinic access",
-        "source": "https://www.mhh.de/en/children-pneumology-allergology-and-neonatology/patients-visitors/location-and-directions",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.812505,
-          52.3805784
-        ]
-      },
-      "properties": {
-        "id": "osm-988",
-        "name": "recycling 988",
-        "category": "facilities",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8025452,
-          52.38419
-        ]
-      },
-      "properties": {
-        "id": "osm-989",
-        "name": "K3 - Transfusionsmedizin und Transplantat Engeneering / Zentrallabor",
-        "category": "clinic",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
@@ -2836,9 +1718,9 @@
         ]
       },
       "properties": {
-        "id": "osm-990",
+        "id": "osm-324",
         "name": "Raucher-Point",
-        "category": "institute",
+        "category": "facilities",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
@@ -2854,7 +1736,7 @@
         ]
       },
       "properties": {
-        "id": "osm-991",
+        "id": "osm-325",
         "name": "TX-Ambulanz",
         "category": "clinic",
         "address": "Stadtfelddamm 65, 30625 Hannover",
@@ -2873,160 +1755,15 @@
         ]
       },
       "properties": {
-        "id": "osm-992",
+        "id": "osm-326",
         "name": "MHH Bibliothek",
         "category": "institute",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "openingHours": "Mo-Fr 08:00-22:00; Sa-Su 09:00-20:00",
         "phone": "+49 511 532-3329",
         "website": "https://www.mhh.de/bibliothek/",
+        "wheelchair": "yes",
         "source": "https://www.hobsy.de/bibliotheken/detail/bibliothek-der-medizinischen-hochschule-hannover/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.811678,
-          52.3810451
-        ]
-      },
-      "properties": {
-        "id": "osm-993",
-        "name": "parking entrance 993",
-        "category": "parking",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8105353,
-          52.3813618
-        ]
-      },
-      "properties": {
-        "id": "osm-994",
-        "name": "parking entrance 994",
-        "category": "parking",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8113119,
-          52.3819409
-        ]
-      },
-      "properties": {
-        "id": "osm-995",
-        "name": "parking entrance 995",
-        "category": "parking",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8136616,
-          52.3883865
-        ]
-      },
-      "properties": {
-        "id": "osm-996",
-        "name": "bicycle parking 996",
-        "category": "bicycle",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8135004,
-          52.3885023
-        ]
-      },
-      "properties": {
-        "id": "osm-997",
-        "name": "bicycle parking 997",
-        "category": "bicycle",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8133793,
-          52.3885365
-        ]
-      },
-      "properties": {
-        "id": "osm-998",
-        "name": "bicycle parking 998",
-        "category": "bicycle",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8128768,
-          52.3805458
-        ]
-      },
-      "properties": {
-        "id": "osm-999",
-        "name": "Wochenmarkt Heidering",
-        "category": "institute",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "openingHours": "Fr 12:00-18:00",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8129811,
-          52.3807404
-        ]
-      },
-      "properties": {
-        "id": "osm-1000",
-        "name": "Stichweh Textilpflege",
-        "category": "postal",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "openingHours": "Mo-Fr 15:00-18:00, Sa 09:00-12:00, Mo-Fr 08:00-13:00",
-        "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
       }
     },
@@ -3040,8 +1777,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1001",
-        "name": "bicycle parking 1001",
+        "id": "osm-327",
+        "name": "bicycle parking 327",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3058,10 +1795,11 @@
         ]
       },
       "properties": {
-        "id": "osm-1002",
-        "name": "parking entrance 1002",
+        "id": "osm-328",
+        "name": "parking entrance 328",
         "category": "parking",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
+        "entranceType": "yes",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
       }
@@ -3076,8 +1814,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1003",
-        "name": "bench 1003",
+        "id": "osm-329",
+        "name": "bench 329",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3094,8 +1832,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1004",
-        "name": "bench 1004",
+        "id": "osm-330",
+        "name": "bench 330",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3112,8 +1850,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1005",
-        "name": "bench 1005",
+        "id": "osm-331",
+        "name": "bench 331",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3130,8 +1868,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1006",
-        "name": "bench 1006",
+        "id": "osm-332",
+        "name": "bench 332",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3148,8 +1886,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1007",
-        "name": "bicycle parking 1007",
+        "id": "osm-333",
+        "name": "bicycle parking 333",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3166,8 +1904,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1008",
-        "name": "bicycle parking 1008",
+        "id": "osm-334",
+        "name": "bicycle parking 334",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3184,8 +1922,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1009",
-        "name": "bicycle parking 1009",
+        "id": "osm-335",
+        "name": "bicycle parking 335",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3202,8 +1940,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1010",
-        "name": "bicycle parking 1010",
+        "id": "osm-336",
+        "name": "bicycle parking 336",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3220,8 +1958,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1011",
-        "name": "bicycle parking 1011",
+        "id": "osm-337",
+        "name": "bicycle parking 337",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3238,8 +1976,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1012",
-        "name": "bicycle parking 1012",
+        "id": "osm-338",
+        "name": "bicycle parking 338",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3256,8 +1994,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1013",
-        "name": "bicycle parking 1013",
+        "id": "osm-339",
+        "name": "bicycle parking 339",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3274,8 +2012,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1014",
-        "name": "bicycle parking 1014",
+        "id": "osm-340",
+        "name": "bicycle parking 340",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3292,8 +2030,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1015",
-        "name": "bicycle parking 1015",
+        "id": "osm-341",
+        "name": "bicycle parking 341",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3310,8 +2048,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1016",
-        "name": "bicycle parking 1016",
+        "id": "osm-342",
+        "name": "bicycle parking 342",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3328,8 +2066,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1017",
-        "name": "bicycle parking 1017",
+        "id": "osm-343",
+        "name": "bicycle parking 343",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3346,8 +2084,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1018",
-        "name": "bicycle parking 1018",
+        "id": "osm-344",
+        "name": "bicycle parking 344",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3364,8 +2102,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1019",
-        "name": "bicycle parking 1019",
+        "id": "osm-345",
+        "name": "bicycle parking 345",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3382,8 +2120,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1020",
-        "name": "bicycle parking 1020",
+        "id": "osm-346",
+        "name": "bicycle parking 346",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3400,8 +2138,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1021",
-        "name": "bicycle parking 1021",
+        "id": "osm-347",
+        "name": "bicycle parking 347",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3418,8 +2156,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1022",
-        "name": "bench 1022",
+        "id": "osm-348",
+        "name": "bench 348",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3436,8 +2174,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1023",
-        "name": "bench 1023",
+        "id": "osm-349",
+        "name": "bench 349",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3454,8 +2192,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1024",
-        "name": "bench 1024",
+        "id": "osm-350",
+        "name": "bench 350",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3472,8 +2210,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1025",
-        "name": "bench 1025",
+        "id": "osm-351",
+        "name": "bench 351",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3490,8 +2228,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1026",
-        "name": "waste basket 1026",
+        "id": "osm-352",
+        "name": "waste basket 352",
         "category": "waste_baskets",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3508,8 +2246,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1027",
-        "name": "bench 1027",
+        "id": "osm-353",
+        "name": "bench 353",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3526,8 +2264,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1028",
-        "name": "bench 1028",
+        "id": "osm-354",
+        "name": "bench 354",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3544,8 +2282,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1029",
-        "name": "bicycle parking 1029",
+        "id": "osm-355",
+        "name": "bicycle parking 355",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3562,8 +2300,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1030",
-        "name": "bicycle parking 1030",
+        "id": "osm-356",
+        "name": "bicycle parking 356",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3580,8 +2318,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1031",
-        "name": "bicycle parking 1031",
+        "id": "osm-357",
+        "name": "bicycle parking 357",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3598,8 +2336,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1032",
-        "name": "bicycle parking 1032",
+        "id": "osm-358",
+        "name": "bicycle parking 358",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3616,8 +2354,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1033",
-        "name": "bicycle parking 1033",
+        "id": "osm-359",
+        "name": "bicycle parking 359",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3634,8 +2372,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1034",
-        "name": "bicycle parking 1034",
+        "id": "osm-360",
+        "name": "bicycle parking 360",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3652,8 +2390,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1035",
-        "name": "bicycle parking 1035",
+        "id": "osm-361",
+        "name": "bicycle parking 361",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3670,26 +2408,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1036",
-        "name": "bicycle parking 1036",
-        "category": "bicycle",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.795925,
-          52.3775638
-        ]
-      },
-      "properties": {
-        "id": "osm-1037",
-        "name": "bicycle parking 1037",
+        "id": "osm-362",
+        "name": "bicycle parking 362",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3706,8 +2426,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1038",
-        "name": "bicycle parking 1038",
+        "id": "osm-363",
+        "name": "bicycle parking 363",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3724,8 +2444,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1039",
-        "name": "bicycle parking 1039",
+        "id": "osm-364",
+        "name": "bicycle parking 364",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3742,8 +2462,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1040",
-        "name": "bicycle parking 1040",
+        "id": "osm-365",
+        "name": "bicycle parking 365",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3760,8 +2480,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1041",
-        "name": "bicycle parking 1041",
+        "id": "osm-366",
+        "name": "bicycle parking 366",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3778,8 +2498,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1042",
-        "name": "bicycle parking 1042",
+        "id": "osm-367",
+        "name": "bicycle parking 367",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3796,8 +2516,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1043",
-        "name": "bicycle parking 1043",
+        "id": "osm-368",
+        "name": "bicycle parking 368",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3814,8 +2534,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1044",
-        "name": "bicycle parking 1044",
+        "id": "osm-369",
+        "name": "bicycle parking 369",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3832,8 +2552,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1045",
-        "name": "parking entrance 1045",
+        "id": "osm-370",
+        "name": "parking entrance 370",
         "category": "parking",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3850,8 +2570,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1046",
-        "name": "parking entrance 1046",
+        "id": "osm-371",
+        "name": "parking entrance 371",
         "category": "parking",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3868,8 +2588,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1047",
-        "name": "bicycle parking 1047",
+        "id": "osm-372",
+        "name": "bicycle parking 372",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3886,8 +2606,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1048",
-        "name": "waste basket 1048",
+        "id": "osm-373",
+        "name": "waste basket 373",
         "category": "waste_baskets",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3904,8 +2624,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1049",
-        "name": "bicycle parking 1049",
+        "id": "osm-374",
+        "name": "bicycle parking 374",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3922,8 +2642,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1050",
-        "name": "bicycle parking 1050",
+        "id": "osm-375",
+        "name": "bicycle parking 375",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3940,8 +2660,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1051",
-        "name": "bicycle parking 1051",
+        "id": "osm-376",
+        "name": "bicycle parking 376",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3958,8 +2678,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1052",
-        "name": "waste basket 1052",
+        "id": "osm-377",
+        "name": "waste basket 377",
         "category": "waste_baskets",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3976,8 +2696,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1053",
-        "name": "bicycle parking 1053",
+        "id": "osm-378",
+        "name": "bicycle parking 378",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -3994,8 +2714,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1054",
-        "name": "waste basket 1054",
+        "id": "osm-379",
+        "name": "waste basket 379",
         "category": "waste_baskets",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4012,8 +2732,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1055",
-        "name": "waste basket 1055",
+        "id": "osm-380",
+        "name": "waste basket 380",
         "category": "waste_baskets",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4030,8 +2750,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1056",
-        "name": "bicycle parking 1056",
+        "id": "osm-381",
+        "name": "bicycle parking 381",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4048,8 +2768,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1057",
-        "name": "bicycle parking 1057",
+        "id": "osm-382",
+        "name": "bicycle parking 382",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4066,8 +2786,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1058",
-        "name": "bicycle parking 1058",
+        "id": "osm-383",
+        "name": "bicycle parking 383",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4084,8 +2804,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1059",
-        "name": "bicycle parking 1059",
+        "id": "osm-384",
+        "name": "bicycle parking 384",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4102,9 +2822,9 @@
         ]
       },
       "properties": {
-        "id": "osm-1060",
-        "name": "waste disposal 1060",
-        "category": "institute",
+        "id": "osm-385",
+        "name": "waste disposal 385",
+        "category": "facilities",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
@@ -4120,8 +2840,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1061",
-        "name": "bicycle parking 1061",
+        "id": "osm-386",
+        "name": "bicycle parking 386",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4138,9 +2858,9 @@
         ]
       },
       "properties": {
-        "id": "osm-1062",
-        "name": "waste disposal 1062",
-        "category": "institute",
+        "id": "osm-387",
+        "name": "waste disposal 387",
+        "category": "facilities",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
@@ -4156,8 +2876,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1063",
-        "name": "bicycle parking 1063",
+        "id": "osm-388",
+        "name": "bicycle parking 388",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4174,8 +2894,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1064",
-        "name": "bicycle parking 1064",
+        "id": "osm-389",
+        "name": "bicycle parking 389",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4192,8 +2912,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1065",
-        "name": "waste basket 1065",
+        "id": "osm-390",
+        "name": "waste basket 390",
         "category": "waste_baskets",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4210,8 +2930,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1066",
-        "name": "bicycle parking 1066",
+        "id": "osm-391",
+        "name": "bicycle parking 391",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4228,8 +2948,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1067",
-        "name": "bicycle parking 1067",
+        "id": "osm-392",
+        "name": "bicycle parking 392",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4246,8 +2966,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1068",
-        "name": "bicycle parking 1068",
+        "id": "osm-393",
+        "name": "bicycle parking 393",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4264,9 +2984,9 @@
         ]
       },
       "properties": {
-        "id": "osm-1069",
-        "name": "waste disposal 1069",
-        "category": "institute",
+        "id": "osm-394",
+        "name": "waste disposal 394",
+        "category": "facilities",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
@@ -4282,8 +3002,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1070",
-        "name": "waste basket 1070",
+        "id": "osm-395",
+        "name": "waste basket 395",
         "category": "waste_baskets",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4300,8 +3020,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1071",
-        "name": "bicycle parking 1071",
+        "id": "osm-396",
+        "name": "bicycle parking 396",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4318,8 +3038,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1072",
-        "name": "bicycle parking 1072",
+        "id": "osm-397",
+        "name": "bicycle parking 397",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4336,8 +3056,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1073",
-        "name": "waste basket 1073",
+        "id": "osm-398",
+        "name": "waste basket 398",
         "category": "waste_baskets",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4354,8 +3074,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1074",
-        "name": "bicycle parking 1074",
+        "id": "osm-399",
+        "name": "bicycle parking 399",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4372,8 +3092,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1075",
-        "name": "bench 1075",
+        "id": "osm-400",
+        "name": "bench 400",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4390,8 +3110,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1076",
-        "name": "bicycle parking 1076",
+        "id": "osm-401",
+        "name": "bicycle parking 401",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4408,8 +3128,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1077",
-        "name": "bicycle parking 1077",
+        "id": "osm-402",
+        "name": "bicycle parking 402",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4426,8 +3146,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1078",
-        "name": "bicycle parking 1078",
+        "id": "osm-403",
+        "name": "bicycle parking 403",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4444,8 +3164,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1079",
-        "name": "bench 1079",
+        "id": "osm-404",
+        "name": "bench 404",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4462,9 +3182,9 @@
         ]
       },
       "properties": {
-        "id": "osm-1080",
-        "name": "waste disposal 1080",
-        "category": "institute",
+        "id": "osm-405",
+        "name": "waste disposal 405",
+        "category": "facilities",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
@@ -4480,9 +3200,9 @@
         ]
       },
       "properties": {
-        "id": "osm-1081",
-        "name": "waste disposal 1081",
-        "category": "institute",
+        "id": "osm-406",
+        "name": "waste disposal 406",
+        "category": "facilities",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
@@ -4498,9 +3218,9 @@
         ]
       },
       "properties": {
-        "id": "osm-1082",
-        "name": "waste disposal 1082",
-        "category": "institute",
+        "id": "osm-407",
+        "name": "waste disposal 407",
+        "category": "facilities",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
@@ -4516,9 +3236,9 @@
         ]
       },
       "properties": {
-        "id": "osm-1083",
-        "name": "waste disposal 1083",
-        "category": "institute",
+        "id": "osm-408",
+        "name": "waste disposal 408",
+        "category": "facilities",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
@@ -4534,8 +3254,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1084",
-        "name": "waste basket 1084",
+        "id": "osm-409",
+        "name": "waste basket 409",
         "category": "waste_baskets",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4552,8 +3272,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1085",
-        "name": "bench 1085",
+        "id": "osm-410",
+        "name": "bench 410",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4570,8 +3290,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1086",
-        "name": "bench 1086",
+        "id": "osm-411",
+        "name": "bench 411",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4588,8 +3308,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1087",
-        "name": "bench 1087",
+        "id": "osm-412",
+        "name": "bench 412",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4606,8 +3326,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1088",
-        "name": "bench 1088",
+        "id": "osm-413",
+        "name": "bench 413",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4624,8 +3344,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1089",
-        "name": "bicycle parking 1089",
+        "id": "osm-414",
+        "name": "bicycle parking 414",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4642,8 +3362,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1090",
-        "name": "waste basket 1090",
+        "id": "osm-415",
+        "name": "waste basket 415",
         "category": "waste_baskets",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4660,8 +3380,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1091",
-        "name": "bench 1091",
+        "id": "osm-416",
+        "name": "bench 416",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4678,8 +3398,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1092",
-        "name": "bicycle parking 1092",
+        "id": "osm-417",
+        "name": "bicycle parking 417",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4696,8 +3416,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1093",
-        "name": "bicycle parking 1093",
+        "id": "osm-418",
+        "name": "bicycle parking 418",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4714,8 +3434,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1094",
-        "name": "waste basket 1094",
+        "id": "osm-419",
+        "name": "waste basket 419",
         "category": "waste_baskets",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4732,8 +3452,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1095",
-        "name": "bicycle parking 1095",
+        "id": "osm-420",
+        "name": "bicycle parking 420",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4750,8 +3470,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1096",
-        "name": "bench 1096",
+        "id": "osm-421",
+        "name": "bench 421",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4768,8 +3488,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1097",
-        "name": "waste basket 1097",
+        "id": "osm-422",
+        "name": "waste basket 422",
         "category": "waste_baskets",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4786,8 +3506,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1098",
-        "name": "waste basket 1098",
+        "id": "osm-423",
+        "name": "waste basket 423",
         "category": "waste_baskets",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4804,8 +3524,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1099",
-        "name": "bicycle parking 1099",
+        "id": "osm-424",
+        "name": "bicycle parking 424",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4822,8 +3542,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1100",
-        "name": "bicycle parking 1100",
+        "id": "osm-425",
+        "name": "bicycle parking 425",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4840,8 +3560,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1101",
-        "name": "bicycle parking 1101",
+        "id": "osm-426",
+        "name": "bicycle parking 426",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4858,8 +3578,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1102",
-        "name": "bicycle parking 1102",
+        "id": "osm-427",
+        "name": "bicycle parking 427",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4876,8 +3596,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1103",
-        "name": "bench 1103",
+        "id": "osm-428",
+        "name": "bench 428",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4894,8 +3614,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1104",
-        "name": "bicycle parking 1104",
+        "id": "osm-429",
+        "name": "bicycle parking 429",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4912,8 +3632,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1105",
-        "name": "bicycle parking 1105",
+        "id": "osm-430",
+        "name": "bicycle parking 430",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4930,8 +3650,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1106",
-        "name": "bicycle parking 1106",
+        "id": "osm-431",
+        "name": "bicycle parking 431",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4948,8 +3668,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1107",
-        "name": "bicycle parking 1107",
+        "id": "osm-432",
+        "name": "bicycle parking 432",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4966,8 +3686,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1108",
-        "name": "bicycle parking 1108",
+        "id": "osm-433",
+        "name": "bicycle parking 433",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -4984,8 +3704,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1109",
-        "name": "bicycle parking 1109",
+        "id": "osm-434",
+        "name": "bicycle parking 434",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5002,8 +3722,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1110",
-        "name": "bicycle parking 1110",
+        "id": "osm-435",
+        "name": "bicycle parking 435",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5020,8 +3740,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1111",
-        "name": "bicycle parking 1111",
+        "id": "osm-436",
+        "name": "bicycle parking 436",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5038,8 +3758,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1112",
-        "name": "bicycle parking 1112",
+        "id": "osm-437",
+        "name": "bicycle parking 437",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5056,8 +3776,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1113",
-        "name": "bicycle parking 1113",
+        "id": "osm-438",
+        "name": "bicycle parking 438",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5074,8 +3794,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1114",
-        "name": "bicycle parking 1114",
+        "id": "osm-439",
+        "name": "bicycle parking 439",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5092,8 +3812,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1115",
-        "name": "bench 1115",
+        "id": "osm-440",
+        "name": "bench 440",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5110,8 +3830,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1116",
-        "name": "waste basket 1116",
+        "id": "osm-441",
+        "name": "waste basket 441",
         "category": "waste_baskets",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5128,8 +3848,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1117",
-        "name": "waste basket 1117",
+        "id": "osm-442",
+        "name": "waste basket 442",
         "category": "waste_baskets",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5146,8 +3866,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1118",
-        "name": "waste basket 1118",
+        "id": "osm-443",
+        "name": "waste basket 443",
         "category": "waste_baskets",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5164,8 +3884,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1119",
-        "name": "bicycle parking 1119",
+        "id": "osm-444",
+        "name": "bicycle parking 444",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5182,8 +3902,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1120",
-        "name": "bench 1120",
+        "id": "osm-445",
+        "name": "bench 445",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5200,8 +3920,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1121",
-        "name": "waste basket 1121",
+        "id": "osm-446",
+        "name": "waste basket 446",
         "category": "waste_baskets",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5218,8 +3938,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1122",
-        "name": "bench 1122",
+        "id": "osm-447",
+        "name": "bench 447",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5236,8 +3956,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1123",
-        "name": "bench 1123",
+        "id": "osm-448",
+        "name": "bench 448",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5254,8 +3974,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1124",
-        "name": "bench 1124",
+        "id": "osm-449",
+        "name": "bench 449",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5272,8 +3992,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1125",
-        "name": "bench 1125",
+        "id": "osm-450",
+        "name": "bench 450",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5290,8 +4010,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1126",
-        "name": "bench 1126",
+        "id": "osm-451",
+        "name": "bench 451",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5308,8 +4028,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1127",
-        "name": "bench 1127",
+        "id": "osm-452",
+        "name": "bench 452",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5326,8 +4046,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1128",
-        "name": "bench 1128",
+        "id": "osm-453",
+        "name": "bench 453",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5344,8 +4064,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1129",
-        "name": "bench 1129",
+        "id": "osm-454",
+        "name": "bench 454",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5362,8 +4082,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1130",
-        "name": "bench 1130",
+        "id": "osm-455",
+        "name": "bench 455",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5380,8 +4100,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1131",
-        "name": "bicycle parking 1131",
+        "id": "osm-456",
+        "name": "bicycle parking 456",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5398,8 +4118,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1132",
-        "name": "bicycle parking 1132",
+        "id": "osm-457",
+        "name": "bicycle parking 457",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5416,8 +4136,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1133",
-        "name": "bicycle parking 1133",
+        "id": "osm-458",
+        "name": "bicycle parking 458",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5434,8 +4154,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1134",
-        "name": "bicycle parking 1134",
+        "id": "osm-459",
+        "name": "bicycle parking 459",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5452,8 +4172,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1135",
-        "name": "bicycle parking 1135",
+        "id": "osm-460",
+        "name": "bicycle parking 460",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5470,8 +4190,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1136",
-        "name": "bicycle parking 1136",
+        "id": "osm-461",
+        "name": "bicycle parking 461",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5488,8 +4208,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1137",
-        "name": "bench 1137",
+        "id": "osm-462",
+        "name": "bench 462",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5506,8 +4226,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1138",
-        "name": "bicycle parking 1138",
+        "id": "osm-463",
+        "name": "bicycle parking 463",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5524,8 +4244,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1139",
-        "name": "bench 1139",
+        "id": "osm-464",
+        "name": "bench 464",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5542,8 +4262,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1140",
-        "name": "bicycle parking 1140",
+        "id": "osm-465",
+        "name": "bicycle parking 465",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5560,8 +4280,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1141",
-        "name": "bicycle parking 1141",
+        "id": "osm-466",
+        "name": "bicycle parking 466",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5578,8 +4298,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1142",
-        "name": "waste basket 1142",
+        "id": "osm-467",
+        "name": "waste basket 467",
         "category": "waste_baskets",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5596,8 +4316,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1143",
-        "name": "bench 1143",
+        "id": "osm-468",
+        "name": "bench 468",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5614,8 +4334,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1144",
-        "name": "bench 1144",
+        "id": "osm-469",
+        "name": "bench 469",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5632,27 +4352,9 @@
         ]
       },
       "properties": {
-        "id": "osm-1145",
-        "name": "bicycle parking 1145",
+        "id": "osm-470",
+        "name": "bicycle parking 470",
         "category": "bicycle",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.813312,
-          52.3875732
-        ]
-      },
-      "properties": {
-        "id": "osm-1146",
-        "name": "loading dock 1146",
-        "category": "institute",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
@@ -5668,8 +4370,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1147",
-        "name": "parking entrance 1147",
+        "id": "osm-471",
+        "name": "parking entrance 471",
         "category": "parking",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5686,8 +4388,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1148",
-        "name": "charging station 1148",
+        "id": "osm-472",
+        "name": "charging station 472",
         "category": "charging",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5704,8 +4406,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1149",
-        "name": "bicycle parking 1149",
+        "id": "osm-473",
+        "name": "bicycle parking 473",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5722,8 +4424,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1150",
-        "name": "bicycle parking 1150",
+        "id": "osm-474",
+        "name": "bicycle parking 474",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5740,8 +4442,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1151",
-        "name": "bicycle parking 1151",
+        "id": "osm-475",
+        "name": "bicycle parking 475",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5758,8 +4460,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1152",
-        "name": "bicycle parking 1152",
+        "id": "osm-476",
+        "name": "bicycle parking 476",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5776,8 +4478,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1153",
-        "name": "bicycle parking 1153",
+        "id": "osm-477",
+        "name": "bicycle parking 477",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5794,8 +4496,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1154",
-        "name": "bicycle parking 1154",
+        "id": "osm-478",
+        "name": "bicycle parking 478",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5812,8 +4514,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1155",
-        "name": "bicycle parking 1155",
+        "id": "osm-479",
+        "name": "bicycle parking 479",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5830,8 +4532,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1156",
-        "name": "bicycle parking 1156",
+        "id": "osm-480",
+        "name": "bicycle parking 480",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5848,9 +4550,9 @@
         ]
       },
       "properties": {
-        "id": "osm-1157",
-        "name": "waste disposal 1157",
-        "category": "institute",
+        "id": "osm-481",
+        "name": "waste disposal 481",
+        "category": "facilities",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
@@ -5866,9 +4568,9 @@
         ]
       },
       "properties": {
-        "id": "osm-1158",
-        "name": "waste disposal 1158",
-        "category": "institute",
+        "id": "osm-482",
+        "name": "waste disposal 482",
+        "category": "facilities",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
@@ -5884,9 +4586,9 @@
         ]
       },
       "properties": {
-        "id": "osm-1159",
-        "name": "waste disposal 1159",
-        "category": "institute",
+        "id": "osm-483",
+        "name": "waste disposal 483",
+        "category": "facilities",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
@@ -5902,9 +4604,9 @@
         ]
       },
       "properties": {
-        "id": "osm-1160",
-        "name": "waste disposal 1160",
-        "category": "institute",
+        "id": "osm-484",
+        "name": "waste disposal 484",
+        "category": "facilities",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
@@ -5920,9 +4622,9 @@
         ]
       },
       "properties": {
-        "id": "osm-1161",
-        "name": "waste disposal 1161",
-        "category": "institute",
+        "id": "osm-485",
+        "name": "waste disposal 485",
+        "category": "facilities",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
@@ -5938,8 +4640,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1162",
-        "name": "bench 1162",
+        "id": "osm-486",
+        "name": "bench 486",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5956,8 +4658,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1163",
-        "name": "bench 1163",
+        "id": "osm-487",
+        "name": "bench 487",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5974,8 +4676,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1164",
-        "name": "bench 1164",
+        "id": "osm-488",
+        "name": "bench 488",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -5992,8 +4694,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1165",
-        "name": "bench 1165",
+        "id": "osm-489",
+        "name": "bench 489",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6010,8 +4712,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1166",
-        "name": "bench 1166",
+        "id": "osm-490",
+        "name": "bench 490",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6028,8 +4730,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1167",
-        "name": "bench 1167",
+        "id": "osm-491",
+        "name": "bench 491",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6046,8 +4748,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1168",
-        "name": "bench 1168",
+        "id": "osm-492",
+        "name": "bench 492",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6064,8 +4766,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1169",
-        "name": "bench 1169",
+        "id": "osm-493",
+        "name": "bench 493",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6082,8 +4784,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1170",
-        "name": "bench 1170",
+        "id": "osm-494",
+        "name": "bench 494",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6100,8 +4802,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1171",
-        "name": "bench 1171",
+        "id": "osm-495",
+        "name": "bench 495",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6118,8 +4820,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1172",
-        "name": "bench 1172",
+        "id": "osm-496",
+        "name": "bench 496",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6136,8 +4838,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1173",
-        "name": "bench 1173",
+        "id": "osm-497",
+        "name": "bench 497",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6154,8 +4856,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1174",
-        "name": "bench 1174",
+        "id": "osm-498",
+        "name": "bench 498",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6172,8 +4874,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1175",
-        "name": "bench 1175",
+        "id": "osm-499",
+        "name": "bench 499",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6190,8 +4892,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1176",
-        "name": "bench 1176",
+        "id": "osm-500",
+        "name": "bench 500",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6208,8 +4910,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1177",
-        "name": "bicycle parking 1177",
+        "id": "osm-501",
+        "name": "bicycle parking 501",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6226,8 +4928,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1178",
-        "name": "bicycle parking 1178",
+        "id": "osm-502",
+        "name": "bicycle parking 502",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6244,8 +4946,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1179",
-        "name": "bicycle parking 1179",
+        "id": "osm-503",
+        "name": "bicycle parking 503",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6262,12 +4964,12 @@
         ]
       },
       "properties": {
-        "id": "osm-1180",
-        "name": "parcel locker 1180",
+        "id": "osm-504",
+        "name": "parcel locker 504",
         "category": "postal",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "openingHours": "24/7",
-        "transitLines": "125",
+        "wheelchair": "yes",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
       }
@@ -6282,68 +4984,11 @@
         ]
       },
       "properties": {
-        "id": "osm-1181",
-        "name": "bicycle repair station 1181",
+        "id": "osm-505",
+        "name": "bicycle repair station 505",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "openingHours": "24/7",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.809554,
-          52.3834442
-        ]
-      },
-      "properties": {
-        "id": "osm-1182",
-        "name": "Deutsches HörZentrum Hannover",
-        "category": "clinic",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "openingHours": "Mo-Th 07:30-16:00; Fr 07:30-14:30",
-        "phone": "+495115326603",
-        "website": "https://www.dhz.clinic/",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8104859,
-          52.3856758
-        ]
-      },
-      "properties": {
-        "id": "osm-1183",
-        "name": "bench 1183",
-        "category": "benches",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8105615,
-          52.3856769
-        ]
-      },
-      "properties": {
-        "id": "osm-1184",
-        "name": "bench 1184",
-        "category": "benches",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
       }
@@ -6358,8 +5003,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1185",
-        "name": "bench 1185",
+        "id": "osm-506",
+        "name": "bench 506",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6376,7 +5021,7 @@
         ]
       },
       "properties": {
-        "id": "osm-1186",
+        "id": "osm-507",
         "name": "Bücherei für Patient:innen und Hochschulangehörige",
         "category": "institute",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
@@ -6397,8 +5042,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1187",
-        "name": "vending machine 1187",
+        "id": "osm-508",
+        "name": "vending machine 508",
         "category": "facilities",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6415,8 +5060,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1188",
-        "name": "vending machine 1188",
+        "id": "osm-509",
+        "name": "vending machine 509",
         "category": "facilities",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6433,8 +5078,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1189",
-        "name": "vending machine 1189",
+        "id": "osm-510",
+        "name": "vending machine 510",
         "category": "facilities",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6451,7 +5096,7 @@
         ]
       },
       "properties": {
-        "id": "osm-1190",
+        "id": "osm-511",
         "name": "Oldenburgische Landesbank",
         "category": "finance",
         "address": "Carl-Neuberg-Straße 1, 30625 Hannover",
@@ -6472,29 +5117,11 @@
         ]
       },
       "properties": {
-        "id": "osm-1191",
-        "name": "atm 1191",
+        "id": "osm-512",
+        "name": "atm 512",
         "category": "finance",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "openingHours": "24/7",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8121887,
-          52.3815974
-        ]
-      },
-      "properties": {
-        "id": "osm-1192",
-        "name": "parking entrance 1192",
-        "category": "parking",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
       }
@@ -6509,7 +5136,7 @@
         ]
       },
       "properties": {
-        "id": "osm-1193",
+        "id": "osm-513",
         "name": "MTA-Schulen",
         "category": "institute",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
@@ -6527,7 +5154,7 @@
         ]
       },
       "properties": {
-        "id": "osm-1194",
+        "id": "osm-514",
         "name": "Zur Feurigen Currywurst - Asiatische Küche",
         "category": "food",
         "address": "Berckhusenstraße 121, 30625 Hannover",
@@ -6546,8 +5173,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1195",
-        "name": "parking entrance 1195",
+        "id": "osm-515",
+        "name": "parking entrance 515",
         "category": "parking",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6564,8 +5191,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1196",
-        "name": "parking entrance 1196",
+        "id": "osm-516",
+        "name": "parking entrance 516",
         "category": "parking",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6582,8 +5209,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1197",
-        "name": "parking entrance 1197",
+        "id": "osm-517",
+        "name": "parking entrance 517",
         "category": "parking",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6600,8 +5227,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1198",
-        "name": "bench 1198",
+        "id": "osm-518",
+        "name": "bench 518",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6618,65 +5245,11 @@
         ]
       },
       "properties": {
-        "id": "osm-1199",
+        "id": "osm-519",
         "name": "enercity Ladestation",
         "category": "charging",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "openingHours": "24/7",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8111019,
-          52.3823366
-        ]
-      },
-      "properties": {
-        "id": "osm-1200",
-        "name": "bench 1200",
-        "category": "benches",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8111031,
-          52.3823257
-        ]
-      },
-      "properties": {
-        "id": "osm-1201",
-        "name": "waste basket 1201",
-        "category": "waste_baskets",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8110807,
-          52.3824018
-        ]
-      },
-      "properties": {
-        "id": "osm-1202",
-        "name": "bench 1202",
-        "category": "benches",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
       }
@@ -6691,8 +5264,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1203",
-        "name": "bench 1203",
+        "id": "osm-520",
+        "name": "bench 520",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6709,8 +5282,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1204",
-        "name": "waste basket 1204",
+        "id": "osm-521",
+        "name": "waste basket 521",
         "category": "waste_baskets",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6727,8 +5300,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1205",
-        "name": "bench 1205",
+        "id": "osm-522",
+        "name": "bench 522",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6745,8 +5318,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1206",
-        "name": "bench 1206",
+        "id": "osm-523",
+        "name": "bench 523",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6763,8 +5336,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1207",
-        "name": "bench 1207",
+        "id": "osm-524",
+        "name": "bench 524",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6781,8 +5354,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1208",
-        "name": "bench 1208",
+        "id": "osm-525",
+        "name": "bench 525",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6799,8 +5372,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1209",
-        "name": "bench 1209",
+        "id": "osm-526",
+        "name": "bench 526",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6817,8 +5390,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1210",
-        "name": "bench 1210",
+        "id": "osm-527",
+        "name": "bench 527",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6835,8 +5408,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1211",
-        "name": "bench 1211",
+        "id": "osm-528",
+        "name": "bench 528",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6853,8 +5426,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1212",
-        "name": "bench 1212",
+        "id": "osm-529",
+        "name": "bench 529",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6871,8 +5444,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1213",
-        "name": "bench 1213",
+        "id": "osm-530",
+        "name": "bench 530",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6889,8 +5462,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1214",
-        "name": "waste basket 1214",
+        "id": "osm-531",
+        "name": "waste basket 531",
         "category": "waste_baskets",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6907,8 +5480,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1215",
-        "name": "waste basket 1215",
+        "id": "osm-532",
+        "name": "waste basket 532",
         "category": "waste_baskets",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6925,8 +5498,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1216",
-        "name": "waste basket 1216",
+        "id": "osm-533",
+        "name": "waste basket 533",
         "category": "waste_baskets",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6943,8 +5516,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1217",
-        "name": "bench 1217",
+        "id": "osm-534",
+        "name": "bench 534",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6961,8 +5534,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1218",
-        "name": "waste basket 1218",
+        "id": "osm-535",
+        "name": "waste basket 535",
         "category": "waste_baskets",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6979,8 +5552,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1219",
-        "name": "bench 1219",
+        "id": "osm-536",
+        "name": "bench 536",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -6997,8 +5570,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1220",
-        "name": "charging station 1220",
+        "id": "osm-537",
+        "name": "charging station 537",
         "category": "charging",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -7015,8 +5588,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1221",
-        "name": "charging station 1221",
+        "id": "osm-538",
+        "name": "charging station 538",
         "category": "charging",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -7033,8 +5606,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1222",
-        "name": "charging station 1222",
+        "id": "osm-539",
+        "name": "charging station 539",
         "category": "charging",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -7051,8 +5624,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1223",
-        "name": "parking entrance 1223",
+        "id": "osm-540",
+        "name": "parking entrance 540",
         "category": "parking",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -7069,8 +5642,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1224",
-        "name": "waste basket 1224",
+        "id": "osm-541",
+        "name": "waste basket 541",
         "category": "waste_baskets",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -7087,8 +5660,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1225",
-        "name": "bench 1225",
+        "id": "osm-542",
+        "name": "bench 542",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -7105,27 +5678,9 @@
         ]
       },
       "properties": {
-        "id": "osm-1226",
-        "name": "bench 1226",
+        "id": "osm-543",
+        "name": "bench 543",
         "category": "benches",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.809463,
-          52.3796245
-        ]
-      },
-      "properties": {
-        "id": "osm-1227",
-        "name": "waste basket 1227",
-        "category": "waste_baskets",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
@@ -7141,27 +5696,9 @@
         ]
       },
       "properties": {
-        "id": "osm-1228",
-        "name": "waste basket 1228",
+        "id": "osm-544",
+        "name": "waste basket 544",
         "category": "waste_baskets",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8127065,
-          52.380584
-        ]
-      },
-      "properties": {
-        "id": "osm-1229",
-        "name": "charging station 1229",
-        "category": "charging",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
@@ -7177,8 +5714,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1230",
-        "name": "bicycle parking 1230",
+        "id": "osm-545",
+        "name": "bicycle parking 545",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -7195,8 +5732,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1231",
-        "name": "bicycle parking 1231",
+        "id": "osm-546",
+        "name": "bicycle parking 546",
         "category": "bicycle",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -7213,8 +5750,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1232",
-        "name": "bench 1232",
+        "id": "osm-547",
+        "name": "bench 547",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -7231,9 +5768,9 @@
         ]
       },
       "properties": {
-        "id": "osm-1233",
-        "name": "waste disposal 1233",
-        "category": "institute",
+        "id": "osm-548",
+        "name": "waste disposal 548",
+        "category": "facilities",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
@@ -7249,9 +5786,9 @@
         ]
       },
       "properties": {
-        "id": "osm-1234",
-        "name": "waste disposal 1234",
-        "category": "institute",
+        "id": "osm-549",
+        "name": "waste disposal 549",
+        "category": "facilities",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
@@ -7267,8 +5804,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1235",
-        "name": "bench 1235",
+        "id": "osm-550",
+        "name": "bench 550",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -7285,8 +5822,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1236",
-        "name": "bench 1236",
+        "id": "osm-551",
+        "name": "bench 551",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -7303,8 +5840,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1237",
-        "name": "bench 1237",
+        "id": "osm-552",
+        "name": "bench 552",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -7321,8 +5858,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1238",
-        "name": "bench 1238",
+        "id": "osm-553",
+        "name": "bench 553",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -7339,8 +5876,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1239",
-        "name": "bench 1239",
+        "id": "osm-554",
+        "name": "bench 554",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -7357,8 +5894,8 @@
         ]
       },
       "properties": {
-        "id": "osm-1240",
-        "name": "bench 1240",
+        "id": "osm-555",
+        "name": "bench 555",
         "category": "benches",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
@@ -7375,45 +5912,9 @@
         ]
       },
       "properties": {
-        "id": "osm-1241",
-        "name": "bench 1241",
+        "id": "osm-556",
+        "name": "bench 556",
         "category": "benches",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8113048,
-          52.3885133
-        ]
-      },
-      "properties": {
-        "id": "osm-1242",
-        "name": "parking entrance 1242",
-        "category": "parking",
-        "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
-        "source": "https://www.openstreetmap.org/",
-        "lastVerified": "2026-04-30"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.8114358,
-          52.3884701
-        ]
-      },
-      "properties": {
-        "id": "osm-1243",
-        "name": "parking entrance 1243",
-        "category": "parking",
         "address": "Carl-Neuberg-Str. 1, 30625 Hannover",
         "source": "https://www.openstreetmap.org/",
         "lastVerified": "2026-04-30"
