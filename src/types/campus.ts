@@ -13,6 +13,18 @@ export type CampusProps = {
   transitDirection?: string;
   entranceType?: string;
   wheelchair?: string;
+  crossingType?: string;
+  kerb?: string;
+  tactilePaving?: string;
+  ramp?: string;
+  bicycleCapacity?: string;
+  bicycleCovered?: string;
+  bicycleAccess?: string;
+  parkingCapacity?: string;
+  parkingFee?: string;
+  parkingMaxStay?: string;
+  parkingType?: string;
+  evSockets?: string;
   shortLabel?: string;
   source: string;
   lastVerified: string;

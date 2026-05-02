@@ -8,25 +8,117 @@ const outputBuildingPath = path.join(root, 'data', 'mhh-buildings.geojson');
 const publicPoiPath = path.join(root, 'public', 'data', 'mhh-poi.geojson');
 const publicBuildingPath = path.join(root, 'public', 'data', 'mhh-buildings.geojson');
 
-// Polygon around MHH core campus: includes top-left research area,
-// excludes east side past the main road.
-const CAMPUS_POLYGON = [
-  [9.7958, 52.3899],
-  [9.8069, 52.3899],
-  [9.8083, 52.3877],
-  [9.8089, 52.3847],
-  [9.8089, 52.3818],
-  [9.8086, 52.3793],
-  [9.8081, 52.3776],
-  [9.8073, 52.3760],
-  [9.8052, 52.3749],
-  [9.8010, 52.3746],
-  [9.7973, 52.3749],
-  [9.7962, 52.3762],
-  [9.7958, 52.3784],
-  [9.7957, 52.3818],
-  [9.7957, 52.3855],
-  [9.7958, 52.3899],
+// Campus selection regions from user-provided GeoJSON.
+const CAMPUS_POLYGONS = [
+  [
+    [9.7950464, 52.3840753],
+    [9.7972712, 52.3806668],
+    [9.8001468, 52.3799918],
+    [9.8026059, 52.3778735],
+    [9.8035248, 52.378132],
+    [9.8032617, 52.3787307],
+    [9.8056786, 52.3793545],
+    [9.8055271, 52.3795735],
+    [9.8088773, 52.3806905],
+    [9.8092111, 52.3819349],
+    [9.8092739, 52.3823908],
+    [9.8092155, 52.3828529],
+    [9.8089905, 52.3836719],
+    [9.8085418, 52.3844827],
+    [9.8075002, 52.3859011],
+    [9.80798, 52.3867566],
+    [9.8075342, 52.3875631],
+    [9.806328, 52.3872436],
+    [9.8048951, 52.3867914],
+    [9.8040168, 52.3871765],
+    [9.803311, 52.3869571],
+    [9.8029382, 52.3873228],
+    [9.8024721, 52.3879323],
+    [9.8016702, 52.3876134],
+    [9.8015274, 52.3878568],
+    [9.8007967, 52.3876733],
+    [9.8002497, 52.3875382],
+    [9.7998113, 52.3873981],
+    [9.8006324, 52.386362],
+    [9.7987263, 52.3853408],
+    [9.7963876, 52.3847048],
+    [9.7957044, 52.384521],
+    [9.795276, 52.384408],
+    [9.794975, 52.384302],
+    [9.7950464, 52.3840753],
+  ],
+  [
+    [9.8099451135, 52.3896324362],
+    [9.8096233780, 52.3901870098],
+    [9.8088468355, 52.3903026976],
+    [9.8080702930, 52.3901870098],
+    [9.8077485575, 52.3896324362],
+    [9.8080702930, 52.3890778626],
+    [9.8088468355, 52.3889621647],
+    [9.8096233780, 52.3890778626],
+    [9.8099451135, 52.3896324362],
+  ],
+  [
+    [9.8026310125, 52.3773510473],
+    [9.8025787455, 52.3774419236],
+    [9.8024525842, 52.3774599702],
+    [9.8023264229, 52.3774419236],
+    [9.8022741559, 52.3773510473],
+    [9.8023264229, 52.3772601709],
+    [9.8024525842, 52.3772421241],
+    [9.8025787455, 52.3772601709],
+    [9.8026310125, 52.3773510473],
+  ],
+  [
+    [9.8086395, 52.3895988],
+    [9.8089751, 52.3896818],
+    [9.8090069, 52.3896015],
+    [9.8094105, 52.3890452],
+    [9.8090568, 52.3889538],
+    [9.8088481, 52.3892002],
+    [9.8086395, 52.3895988],
+  ],
+  [
+    [9.8086798, 52.3790073],
+    [9.8086798, 52.3790073],
+    [9.8086798, 52.3790073],
+    [9.8086798, 52.3790073],
+  ],
+  [
+    [9.8084412003, 52.3791350279],
+    [9.8088973394, 52.3791350279],
+    [9.8088973394, 52.3789610009],
+    [9.8084412003, 52.3789610009],
+    [9.8084412003, 52.3791350279],
+  ],
+  [
+    [9.8097195613, 52.384649209],
+    [9.8099230809, 52.384649209],
+    [9.8099230809, 52.384537766],
+    [9.8097195613, 52.384537766],
+    [9.8097195613, 52.384649209],
+  ],
+  [
+    [9.8096826178, 52.3841762711],
+    [9.8098588799, 52.3841762711],
+    [9.8098588799, 52.3840633078],
+    [9.8096826178, 52.3840633078],
+    [9.8096826178, 52.3841762711],
+  ],
+  [
+    [9.8067197865, 52.3885523587],
+    [9.8069089065, 52.3885523587],
+    [9.8069089065, 52.3884171949],
+    [9.8067197865, 52.3884171949],
+    [9.8067197865, 52.3885523587],
+  ],
+  [
+    [9.8066696228, 52.3893052007],
+    [9.806866208, 52.3893052007],
+    [9.806866208, 52.3891882633],
+    [9.8066696228, 52.3891882633],
+    [9.8066696228, 52.3893052007],
+  ],
 ];
 
 const NON_CAMPUS_BUILDING_TAGS = new Set([
@@ -43,6 +135,21 @@ const NON_CAMPUS_BUILDING_TAGS = new Set([
   'commercial',
   'yes',
 ]);
+const WALKWAY_HIGHWAY_VALUES = new Set(['footway', 'path', 'steps', 'pedestrian']);
+const ACCESSIBILITY_HIGHWAY_VALUES = new Set(['crossing']);
+const GREEN_LEISURE_VALUES = new Set(['park', 'garden']);
+const GREEN_LANDUSE_VALUES = new Set(['grass', 'meadow', 'forest']);
+const GREEN_NATURAL_VALUES = new Set(['wood', 'tree_row']);
+const hasAccessibilityHint = (props = {}) =>
+  ACCESSIBILITY_HIGHWAY_VALUES.has(String(props.highway ?? '').toLowerCase()) ||
+  Boolean(props.kerb) ||
+  Boolean(props.tactile_paving) ||
+  Boolean(props.ramp) ||
+  Boolean(props.wheelchair);
+const hasGreenAreaHint = (props = {}) =>
+  GREEN_LEISURE_VALUES.has(String(props.leisure ?? '').toLowerCase()) ||
+  GREEN_LANDUSE_VALUES.has(String(props.landuse ?? '').toLowerCase()) ||
+  GREEN_NATURAL_VALUES.has(String(props.natural ?? '').toLowerCase());
 
 const hasCampusHint = (props = {}) => {
   const rawText = [
@@ -79,6 +186,8 @@ const pointInPolygon = (lng, lat, polygon) => {
   return inside;
 };
 
+const pointInAnyCampusPolygon = (lng, lat) => CAMPUS_POLYGONS.some((polygon) => pointInPolygon(lng, lat, polygon));
+
 const representativePoint = (feature) => {
   const geometry = feature.geometry ?? {};
   if (geometry.type === 'Point') {
@@ -89,6 +198,10 @@ const representativePoint = (feature) => {
       ? geometry.coordinates.flat()
       : geometry.type === 'MultiPolygon'
         ? geometry.coordinates.flat(2)
+        : geometry.type === 'LineString'
+          ? geometry.coordinates
+          : geometry.type === 'MultiLineString'
+            ? geometry.coordinates.flat()
         : [];
   if (coordinates.length === 0) return null;
   const centroid = coordinates.reduce(
@@ -125,6 +238,15 @@ const toCategory = (props = {}) => {
   }
   if (props.entrance) {
     return 'entrance';
+  }
+  if (hasAccessibilityHint(props)) {
+    return 'accessibility';
+  }
+  if (hasGreenAreaHint(props)) {
+    return 'green_areas';
+  }
+  if (WALKWAY_HIGHWAY_VALUES.has(String(props.highway ?? '').toLowerCase())) {
+    return 'walkways';
   }
   if (amenity === 'bicycle_parking' || amenity === 'bicycle_repair_station' || amenity === 'bicycle_rental') {
     return 'bicycle';
@@ -181,6 +303,7 @@ const MANUAL_NAME_BY_ADDRESS = {
   'nikolai-fuchs-straße|1': 'Fraunhofer Institute for Toxicology and Experimental Medicine',
   'nikolai-fuchs-straße|1a': 'Fraunhofer Institute for Toxicology and Experimental Medicine',
   'fuhrberger straße|4': 'Polizeistation Kleefeld',
+  'karl-wiechert-allee|15': 'Wohnheim Karl-Wiechert-Allee',
 };
 
 const MANUAL_ENRICHMENT_BY_ADDRESS = {
@@ -206,6 +329,9 @@ const MANUAL_ENRICHMENT_BY_ADDRESS = {
   'fuhrberger straße|4': {
     category: 'facilities',
   },
+  'karl-wiechert-allee|15': {
+    category: 'dormitory',
+  },
 };
 
 const MANUAL_NAME_BY_RAW_NAME = {
@@ -215,6 +341,7 @@ const MANUAL_NAME_BY_RAW_NAME = {
   'J6 / Theoretische Institute II/Hörsäle Q-S': 'J6',
   'Klinisch Diagnostische Labore und Transfusionsmedizin, Blutspendedienst':
     'K3 - Transfusionsmedizin und Transplantat Engeneering / Zentrallabor',
+  'dormitory building 50': 'Wohnheim Karl-Wiechert-Allee',
 };
 
 const normalizeNameKey = (value = '') =>
@@ -249,7 +376,10 @@ const manualEnrichmentFromAddress = (props = {}) => {
   return MANUAL_ENRICHMENT_BY_ADDRESS[`${street}|${houseNumber}`] ?? null;
 };
 
-const isGenericGeneratedName = (name = '') => /^(yes|house|apartments|industrial|office|service|warehouse|roof) building \d+$/i.test(name);
+const isGenericGeneratedName = (name = '') =>
+  /^(yes|house|apartments|industrial|office|service|warehouse|roof|dormitory|parking|hotel|public|school|shed|hangar|toilets|farm auxiliary|kiosk) building \d+$/i.test(
+    name,
+  );
 
 const toLabel = (props = {}, index) => {
   const manualName = manualNameFromAddress(props);
@@ -283,6 +413,15 @@ const toLabel = (props = {}, index) => {
   if (props.entrance) {
     const entranceType = String(props.entrance).replaceAll('_', ' ');
     return `Entrance ${entranceType} ${index + 1}`;
+  }
+  if (hasAccessibilityHint(props)) {
+    return `Accessibility point ${index + 1}`;
+  }
+  if (hasGreenAreaHint(props)) {
+    return `Green area ${index + 1}`;
+  }
+  if (WALKWAY_HIGHWAY_VALUES.has(String(props.highway ?? '').toLowerCase())) {
+    return `Walkway ${index + 1}`;
   }
   if (props.highway === 'bus_stop') {
     return `Bus stop ${index + 1}`;
@@ -365,6 +504,12 @@ const MANUAL_ENRICHMENT_BY_NAME = {
     transitDirection: 'towards dental clinic access',
     source:
       'https://www.mhh.de/en/children-pneumology-allergology-and-neonatology/patients-visitors/location-and-directions',
+  },
+  'dormitory building 50': {
+    category: 'dormitory',
+  },
+  'Studentenwohnheim Heidjerhof': {
+    category: 'dormitory',
   },
 };
 
@@ -468,13 +613,41 @@ const toBuildingCategoryByCode = (shortLabel, currentCategory, geometryType) => 
   return currentCategory;
 };
 
+const SHORT_LABEL_NO_PREFIX = new Set(['J6']);
+
+const normalizeBuildingDisplayName = (name, shortLabel, geometryType) => {
+  if (geometryType !== 'Polygon' && geometryType !== 'MultiPolygon') {
+    return name;
+  }
+  const code = String(shortLabel ?? '').trim().toUpperCase();
+  if (!code || SHORT_LABEL_NO_PREFIX.has(code)) {
+    return name;
+  }
+  const rawName = String(name ?? '').trim();
+  if (!rawName || rawName.toUpperCase() === code) {
+    return rawName;
+  }
+  if (rawName.toUpperCase().startsWith(`${code} -`)) {
+    return rawName;
+  }
+
+  // Normalize common patterns like "K27: Name" or "M19 Name" to "K27 - Name".
+  const leadingCodePattern = new RegExp(`^${code}\\s*[:\\-]?\\s*(.+)$`, 'i');
+  const match = rawName.match(leadingCodePattern);
+  if (match?.[1]) {
+    const rest = match[1].trim();
+    return rest ? `${code} - ${rest}` : code;
+  }
+  return `${code} - ${rawName}`;
+};
+
 const isUsefulFeature = (feature) => {
   const repr = representativePoint(feature);
   if (!repr) {
     return false;
   }
   const [lng, lat] = repr;
-  if (!pointInPolygon(lng, lat, CAMPUS_POLYGON)) {
+  if (!pointInAnyCampusPolygon(lng, lat)) {
     return false;
   }
 
@@ -494,13 +667,15 @@ const isUsefulFeature = (feature) => {
     ) {
       return false;
     }
-    return Boolean(props.building || props.amenity || props.healthcare || props.office || props.name);
+    return Boolean(props.building || props.amenity || props.healthcare || props.office || props.name || hasGreenAreaHint(props));
   }
   if (feature.geometry?.type === 'Point') {
     return Boolean(
       props.name ||
         props.amenity ||
         props.entrance ||
+        hasAccessibilityHint(props) ||
+        hasGreenAreaHint(props) ||
         props.natural === 'tree' ||
         props.highway === 'bus_stop' ||
         props.public_transport ||
@@ -508,22 +683,28 @@ const isUsefulFeature = (feature) => {
         props.healthcare,
     );
   }
+  if (feature.geometry?.type === 'LineString' || feature.geometry?.type === 'MultiLineString') {
+    const highway = String(props.highway ?? '').toLowerCase();
+    return WALKWAY_HIGHWAY_VALUES.has(highway) || hasGreenAreaHint(props);
+  }
   return false;
 };
 
 const toCampusFeature = (feature, index) => {
   const props = feature.properties ?? {};
-  const name = toLabel(props, index);
+  const rawName = toLabel(props, index);
   const openingHours = props.opening_hours ?? props['opening_hours:covid19'] ?? '';
   const phone = toPhone(props);
   const website = toWebsite(props);
   const transitInfo = toTransitInfo(props);
-  const enrichment = MANUAL_ENRICHMENT_BY_NAME[name] ?? {};
+  const enrichment = MANUAL_ENRICHMENT_BY_NAME[rawName] ?? {};
   const addressEnrichment = manualEnrichmentFromAddress(props) ?? {};
   const baseCategory = toCategory(props);
-  const shortLabel = toShortLabel(props, name);
+  const shortLabel = toShortLabel(props, rawName);
   const enrichedCategory = addressEnrichment.category ?? enrichment.category ?? baseCategory;
-  const category = toBuildingCategoryByCode(shortLabel, enrichedCategory, feature.geometry?.type);
+  const geometryType = feature.geometry?.type;
+  const category = toBuildingCategoryByCode(shortLabel, enrichedCategory, geometryType);
+  const name = normalizeBuildingDisplayName(rawName, shortLabel, geometryType);
   return {
     type: 'Feature',
     geometry: feature.geometry,
@@ -540,6 +721,28 @@ const toCampusFeature = (feature, index) => {
       transitDirection: (enrichment.transitDirection ?? transitInfo.transitDirection) || undefined,
       entranceType: props.entrance ? String(props.entrance) : undefined,
       wheelchair: props.wheelchair ? String(props.wheelchair) : undefined,
+      crossingType: props.crossing ? String(props.crossing) : undefined,
+      kerb: props.kerb ? String(props.kerb) : undefined,
+      tactilePaving: props.tactile_paving ? String(props.tactile_paving) : undefined,
+      ramp: props.ramp ? String(props.ramp) : undefined,
+      bicycleCapacity: props.capacity ? String(props.capacity) : undefined,
+      bicycleCovered: props.covered ? String(props.covered) : undefined,
+      bicycleAccess: props.access ? String(props.access) : undefined,
+      parkingCapacity: props.capacity ? String(props.capacity) : undefined,
+      parkingFee: props.fee ? String(props.fee) : undefined,
+      parkingMaxStay: props.maxstay ? String(props.maxstay) : undefined,
+      parkingType: props.parking ? String(props.parking) : undefined,
+      evSockets:
+        props['socket:type2'] || props['socket:schuko'] || props['socket:ccs'] || props['socket:tesla_supercharger']
+          ? [
+              props['socket:type2'] ? `type2=${props['socket:type2']}` : '',
+              props['socket:schuko'] ? `schuko=${props['socket:schuko']}` : '',
+              props['socket:ccs'] ? `ccs=${props['socket:ccs']}` : '',
+              props['socket:tesla_supercharger'] ? `tesla=${props['socket:tesla_supercharger']}` : '',
+            ]
+              .filter(Boolean)
+              .join(', ')
+          : undefined,
       shortLabel,
       source: addressEnrichment.source ?? enrichment.source ?? 'https://www.openstreetmap.org/',
       lastVerified: new Date().toISOString().slice(0, 10),
@@ -655,8 +858,13 @@ const main = async () => {
   const normalized = features.filter(isUsefulFeature).map(toCampusFeature).filter(shouldKeepCampusFeature);
 
   const buildings = normalized.filter((f) => f.geometry?.type === 'Polygon' || f.geometry?.type === 'MultiPolygon');
-  const poiAfterTransitDedupe = dedupeTransitPois(normalized.filter((f) => f.geometry?.type === 'Point'));
-  const poi = dedupeBuildingLikePois(poiAfterTransitDedupe, buildings);
+  const poiPoints = normalized.filter((f) => f.geometry?.type === 'Point');
+  const poiLineFeatures = normalized.filter(
+    (f) => f.geometry?.type === 'LineString' || f.geometry?.type === 'MultiLineString',
+  );
+  const poiAfterTransitDedupe = dedupeTransitPois(poiPoints);
+  const dedupedPointPois = dedupeBuildingLikePois(poiAfterTransitDedupe, buildings);
+  const poi = [...dedupedPointPois, ...poiLineFeatures];
 
   const poiJson = JSON.stringify({ type: 'FeatureCollection', features: poi }, null, 2);
   const buildingJson = JSON.stringify({ type: 'FeatureCollection', features: buildings }, null, 2);

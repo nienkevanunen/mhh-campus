@@ -10,7 +10,6 @@ export type AppElements = {
   rendererModeSelect: HTMLSelectElement;
   basemapStyleSelect: HTMLSelectElement;
   themeModeSelect: HTMLSelectElement;
-  weatherUnitSelect: HTMLSelectElement;
   weatherCard: HTMLDivElement;
   transitLabelsToggle: HTMLInputElement;
   view3DToggle: HTMLInputElement;
@@ -27,6 +26,7 @@ export type AppElements = {
   directionsStart: HTMLInputElement;
   directionsEnd: HTMLInputElement;
   directionsStartPickBtn: HTMLButtonElement;
+  directionsStartMyLocationBtn: HTMLButtonElement;
   directionsEndPickBtn: HTMLButtonElement;
   directionsStartMatches: HTMLDivElement;
   directionsEndMatches: HTMLDivElement;
@@ -86,15 +86,6 @@ export const renderAppShell = (locale: Locale): AppElements => {
               <option value="dark">${locale === 'de' ? 'Dunkel' : 'Dark'}</option>
             </select>
           </label>
-          <label class="topbar-control">
-            <details class="collapsible-panel">
-              <summary>${locale === 'de' ? 'Wetteroptionen' : 'Weather options'}</summary>
-              <select id="weatherUnitSelect" aria-label="${locale === 'de' ? 'Temperatureinheit' : 'Temperature unit'}">
-                <option value="celsius">${locale === 'de' ? 'Grad C' : 'Celsius'}</option>
-                <option value="fahrenheit">${locale === 'de' ? 'Grad F' : 'Fahrenheit'}</option>
-              </select>
-            </details>
-          </label>
         </div>
       </header>
       <div class="layout">
@@ -110,6 +101,7 @@ export const renderAppShell = (locale: Locale): AppElements => {
           <div class="directions-pick-row">
             <input id="directionsStart" type="search" placeholder="${locale === 'de' ? 'Start suchen oder auf Karte klicken' : 'Search start or click on map'}" />
             <button id="directionsStartPickBtn" type="button" class="pick-btn">${locale === 'de' ? 'Karte' : 'Pick'}</button>
+            <button id="directionsStartMyLocationBtn" type="button" class="pick-btn">${locale === 'de' ? 'Standort' : 'My location'}</button>
           </div>
           <div id="directionsStartMatches" class="directions-matches" aria-live="polite"></div>
           <label class="label" for="directionsEnd">${locale === 'de' ? 'Ziel' : 'Destination'}</label>
@@ -178,7 +170,6 @@ export const renderAppShell = (locale: Locale): AppElements => {
     rendererModeSelect: requireElement<HTMLSelectElement>('#rendererMode'),
     basemapStyleSelect: requireElement<HTMLSelectElement>('#basemapStyle'),
     themeModeSelect: requireElement<HTMLSelectElement>('#themeMode'),
-    weatherUnitSelect: requireElement<HTMLSelectElement>('#weatherUnitSelect'),
     weatherCard: requireElement<HTMLDivElement>('#weatherCard'),
     transitLabelsToggle: requireElement<HTMLInputElement>('#transitLabelsToggle'),
     view3DToggle: requireElement<HTMLInputElement>('#view3DToggle'),
@@ -195,6 +186,7 @@ export const renderAppShell = (locale: Locale): AppElements => {
     directionsStart: requireElement<HTMLInputElement>('#directionsStart'),
     directionsEnd: requireElement<HTMLInputElement>('#directionsEnd'),
     directionsStartPickBtn: requireElement<HTMLButtonElement>('#directionsStartPickBtn'),
+    directionsStartMyLocationBtn: requireElement<HTMLButtonElement>('#directionsStartMyLocationBtn'),
     directionsEndPickBtn: requireElement<HTMLButtonElement>('#directionsEndPickBtn'),
     directionsStartMatches: requireElement<HTMLDivElement>('#directionsStartMatches'),
     directionsEndMatches: requireElement<HTMLDivElement>('#directionsEndMatches'),

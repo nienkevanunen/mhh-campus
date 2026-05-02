@@ -1,7 +1,7 @@
 import 'maplibre-gl/dist/maplibre-gl.css';
 import './style.css';
 import { renderAppShell, type RendererMode } from './app/ui';
-import { getWeatherUnit, renderWeather, WEATHER_UNIT_STORAGE_KEY, type TemperatureUnit } from './app/weather';
+import { renderWeather } from './app/weather';
 import { hasWebGlSupport, initMap, type BasemapStyle, type ThemeMode } from './map/initMap';
 import {
   addCampusLayers,
@@ -13,6 +13,7 @@ import {
   resetMapView,
   setEmojiEnabledCategories,
   setLabelEnabledCategories,
+  setUserLocation,
   setWalkingRoute,
   setThreeDViewEnabled,
   setTransitLabelsVisible,
@@ -29,6 +30,22 @@ const BASEMAP_STORAGE_KEY = 'mhh-basemap-style';
 const THEME_STORAGE_KEY = 'mhh-theme-mode';
 const A11Y_PREFS_STORAGE_KEY = 'mhh-a11y-prefs';
 const locale = getLocale();
+const AUTO_ENABLE_EMOJI_ON_SHOW = new Set([
+  'entrance',
+  'trees',
+  'green_areas',
+  'benches',
+  'waste_baskets',
+  'shelter',
+  'postal',
+  'charging',
+  'bicycle',
+  'motorcycle',
+  'facilities',
+  'finance',
+  'accessibility',
+  'walkways',
+]);
 
 type A11yPrefs = {
   dyslexicFont: boolean;
@@ -150,6 +167,24 @@ const sqDistance = (a: [number, number], b: [number, number]): number => {
   return dLat * dLat + dLng * dLng;
 };
 
+const normalizeEmojiStateForVisibility = (
+  visibleCategories: Set<string>,
+  emojiCategories: Set<string>,
+): Set<string> => {
+  const next = new Set<string>();
+  emojiCategories.forEach((category) => {
+    if (visibleCategories.has(category)) {
+      next.add(category);
+    }
+  });
+  AUTO_ENABLE_EMOJI_ON_SHOW.forEach((category) => {
+    if (visibleCategories.has(category)) {
+      next.add(category);
+    }
+  });
+  return next;
+};
+
 const start = async (): Promise<void> => {
   document.documentElement.lang = locale;
   const ui = renderAppShell(locale);
@@ -181,20 +216,17 @@ const start = async (): Promise<void> => {
     window.location.reload();
   });
 
-  const weatherUnit = getWeatherUnit();
-  ui.weatherUnitSelect.value = weatherUnit;
-  ui.weatherUnitSelect.addEventListener('change', () => {
-    const nextUnit: TemperatureUnit = ui.weatherUnitSelect.value === 'fahrenheit' ? 'fahrenheit' : 'celsius';
-    localStorage.setItem(WEATHER_UNIT_STORAGE_KEY, nextUnit);
-    void renderWeather(ui.weatherCard, locale, nextUnit);
-  });
-  await renderWeather(ui.weatherCard, locale, weatherUnit);
+  await renderWeather(ui.weatherCard, locale, 'celsius');
 
   const { poiData, buildingData } = await loadCampusData();
   const features = [...poiData.features, ...buildingData.features];
   const categories = [...new Set(features.map((f) => f.properties.category))].sort();
   const defaultHiddenCategories = new Set([
     'entrance',
+    'walkways',
+    'accessibility',
+    'green_areas',
+    'trees',
     'benches',
     'waste_baskets',
     'shelter',
@@ -209,6 +241,9 @@ const start = async (): Promise<void> => {
   const defaultLabelDisabledCategories = new Set<string>([
     'parking',
     'entrance',
+    'walkways',
+    'accessibility',
+    'green_areas',
     'trees',
     'benches',
     'waste_baskets',
@@ -268,6 +303,7 @@ const start = async (): Promise<void> => {
               onPick([event.lngLat.lat, event.lngLat.lng]);
             });
           },
+          setUserLocation: (coords: [number, number] | null) => setUserLocation(map, coords),
         };
       })()
     : (() => {
@@ -303,6 +339,8 @@ const start = async (): Promise<void> => {
           resetMapView: () => leafletMap.resetView(),
           alignToReferenceOrientation: () => leafletMap.alignToReferenceOrientation(),
           pickPointOnce: (onPick: (coords: [number, number]) => void) => leafletMap.pickPointOnce(onPick),
+          setUserLocation: (coords: [number, number] | null, accuracyMeters?: number) =>
+            leafletMap.setUserLocation(coords, accuracyMeters),
         };
       })();
 
@@ -366,6 +404,8 @@ const start = async (): Promise<void> => {
       locale,
       (nextVisible) => {
         activeCategories = nextVisible;
+        emojiEnabledCategories = normalizeEmojiStateForVisibility(activeCategories, emojiEnabledCategories);
+        mapController.setEmojiEnabledCategories(emojiEnabledCategories);
         syncFilters();
         renderScreenReaderPanel();
       },
@@ -407,6 +447,15 @@ const start = async (): Promise<void> => {
 
   let directionStartFeature: CampusFeature | null = null;
   let directionEndFeature: CampusFeature | null = null;
+  let currentUserLocation: [number, number] | null = null;
+  const currentLocationLabel = locale === 'de' ? 'Mein Standort' : 'My location';
+
+  const isCurrentLocationInput = (value: string): boolean => {
+    const normalized = value.trim().toLowerCase();
+    if (!normalized) return false;
+    if (normalized === currentLocationLabel.toLowerCase()) return true;
+    return locale === 'de' ? normalized === 'standort' || normalized === 'mein standort' : normalized === 'current location';
+  };
 
   const syncDirectionInputFromFeature = (which: 'start' | 'end', feature: CampusFeature): void => {
     const label = `${feature.properties.name} (${feature.properties.category})`;
@@ -505,6 +554,10 @@ const start = async (): Promise<void> => {
   };
 
   ui.directionsStart.addEventListener('input', () => {
+    if (isCurrentLocationInput(ui.directionsStart.value)) {
+      directionStartFeature = null;
+      return;
+    }
     directionStartFeature = resolveFeatureFromInput(ui.directionsStart.value);
     renderDirectionMatches('start', ui.directionsStart.value);
   });
@@ -523,23 +576,47 @@ const start = async (): Promise<void> => {
     }, 100);
   });
   ui.directionsStartPickBtn.addEventListener('click', () => beginMapPick('start'));
+  ui.directionsStartMyLocationBtn.addEventListener('click', () => {
+    if (!currentUserLocation) {
+      ui.directionsStatus.textContent =
+        locale === 'de'
+          ? 'Standort noch nicht verfuegbar. Bitte Standortfreigabe pruefen.'
+          : 'Location is not available yet. Please check location permissions.';
+      return;
+    }
+    directionStartFeature = null;
+    ui.directionsStart.value = currentLocationLabel;
+    ui.directionsStartMatches.innerHTML = '';
+    ui.directionsStatus.textContent =
+      locale === 'de' ? 'Startpunkt auf aktuellen Standort gesetzt.' : 'Starting point set to current location.';
+  });
   ui.directionsEndPickBtn.addEventListener('click', () => beginMapPick('end'));
 
   ui.directionsGoBtn.addEventListener('click', async () => {
     mapController.closeDetailPopups();
-    directionStartFeature = resolveFeatureFromInput(ui.directionsStart.value) ?? directionStartFeature;
+    const startUsesCurrentLocation = isCurrentLocationInput(ui.directionsStart.value);
+    directionStartFeature = startUsesCurrentLocation
+      ? null
+      : (resolveFeatureFromInput(ui.directionsStart.value) ?? directionStartFeature);
     directionEndFeature = resolveFeatureFromInput(ui.directionsEnd.value) ?? directionEndFeature;
-    if (!directionStartFeature || !directionEndFeature) {
+    if ((!startUsesCurrentLocation && !directionStartFeature) || !directionEndFeature) {
       ui.directionsStatus.textContent =
         locale === 'de' ? 'Bitte Start und Ziel auswaehlen.' : 'Please choose both start and destination.';
       return;
     }
-    if (directionStartFeature.properties.id === directionEndFeature.properties.id) {
+    if (startUsesCurrentLocation && !currentUserLocation) {
+      ui.directionsStatus.textContent =
+        locale === 'de'
+          ? 'Standort nicht verfuegbar. Bitte Standortfreigabe pruefen.'
+          : 'Current location unavailable. Please check location permissions.';
+      return;
+    }
+    if (directionStartFeature && directionStartFeature.properties.id === directionEndFeature.properties.id) {
       ui.directionsStatus.textContent =
         locale === 'de' ? 'Start und Ziel sind identisch.' : 'Start and destination are the same place.';
       return;
     }
-    const startCoords = featureCoordinates(directionStartFeature);
+    const startCoords = startUsesCurrentLocation ? currentUserLocation : featureCoordinates(directionStartFeature as CampusFeature);
     const endCoords = featureCoordinates(directionEndFeature);
     if (!startCoords || !endCoords) {
       ui.directionsStatus.textContent =
@@ -669,6 +746,33 @@ const start = async (): Promise<void> => {
   mapController.setThreeDEnabled(threeDEnabled);
   mapController.setEmojiEnabledCategories(emojiEnabledCategories);
   mapController.setLabelEnabledCategories(labelEnabledCategories);
+  if ('geolocation' in navigator) {
+    const watchId = navigator.geolocation.watchPosition(
+      (position) => {
+        currentUserLocation = [position.coords.latitude, position.coords.longitude];
+        mapController.setUserLocation(
+          currentUserLocation,
+          position.coords.accuracy,
+        );
+      },
+      () => {
+        currentUserLocation = null;
+        mapController.setUserLocation(null);
+      },
+      {
+        enableHighAccuracy: true,
+        maximumAge: 10000,
+        timeout: 20000,
+      },
+    );
+    window.addEventListener(
+      'beforeunload',
+      () => {
+        navigator.geolocation.clearWatch(watchId);
+      },
+      { once: true },
+    );
+  }
   syncFilters();
   applyA11yClasses();
   renderScreenReaderPanel();

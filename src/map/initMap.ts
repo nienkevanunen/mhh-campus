@@ -12,38 +12,55 @@ const MAPLIBRE_DEFAULT_ZOOM = 14;
 export type BasemapStyle = 'osm' | 'light';
 export type ThemeMode = 'light' | 'dark';
 
-const getBasemapConfig = (basemap: BasemapStyle, theme: ThemeMode): { tiles: string[]; attribution: string } => {
+const getRasterStyle = (tiles: string[], attribution: string, opacity = 1) => ({
+  version: 8,
+  sources: {
+    basemap: {
+      type: 'raster',
+      tiles,
+      tileSize: 256,
+      attribution,
+    },
+  },
+  layers: [
+    {
+      id: 'basemap-raster',
+      type: 'raster',
+      source: 'basemap',
+      minzoom: 0,
+      maxzoom: 19,
+      paint: {
+        'raster-opacity': opacity,
+      },
+    },
+  ],
+}) as const;
+
+const getBasemapStyle = (basemap: BasemapStyle, theme: ThemeMode): string | object => {
   if (theme === 'dark') {
-    return {
-      tiles: [
-        'https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',
-        'https://b.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',
-        'https://c.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',
-        'https://d.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',
+    return getRasterStyle(
+      [
+        'https://a.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}.png',
+        'https://b.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}.png',
+        'https://c.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}.png',
+        'https://d.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}.png',
       ],
-      attribution: '&copy; OpenStreetMap contributors, &copy; CARTO',
-    };
+      '&copy; OpenStreetMap contributors, &copy; CARTO',
+      1,
+    );
   }
   if (basemap === 'light') {
-    return {
-      tiles: [
-        'https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
-        'https://b.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
-        'https://c.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
-        'https://d.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
-      ],
-      attribution:
-        '&copy; OpenStreetMap contributors, &copy; CARTO',
-    };
+    return 'https://tiles.openfreemap.org/styles/positron';
   }
-  return {
-    tiles: [
+  return getRasterStyle(
+    [
       'https://a.tile.openstreetmap.org/{z}/{x}/{y}.png',
       'https://b.tile.openstreetmap.org/{z}/{x}/{y}.png',
       'https://c.tile.openstreetmap.org/{z}/{x}/{y}.png',
     ],
-    attribution: '&copy; OpenStreetMap contributors',
-  };
+    '&copy; OpenStreetMap contributors',
+    0.5,
+  );
 };
 
 export const hasWebGlSupport = (): boolean => {
@@ -59,29 +76,10 @@ export const hasWebGlSupport = (): boolean => {
 };
 
 export const initMap = (containerId: string, basemap: BasemapStyle, theme: ThemeMode): Map => {
-  const basemapConfig = getBasemapConfig(basemap, theme);
+  const basemapStyle = getBasemapStyle(basemap, theme);
   const map = new maplibregl.Map({
     container: containerId,
-    style: {
-      version: 8,
-      sources: {
-        basemap: {
-          type: 'raster',
-          tiles: basemapConfig.tiles,
-          tileSize: 256,
-          attribution: basemapConfig.attribution,
-        },
-      },
-      layers: [
-        {
-          id: 'basemap-raster',
-          type: 'raster',
-          source: 'basemap',
-          minzoom: 0,
-          maxzoom: 19,
-        },
-      ],
-    },
+    style: basemapStyle as never,
     center: MHH_CENTER,
     zoom: MAPLIBRE_DEFAULT_ZOOM,
     minZoom: MAPLIBRE_MIN_ZOOM,

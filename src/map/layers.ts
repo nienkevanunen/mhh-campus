@@ -14,6 +14,8 @@ const BUILDING_LABELS_LAYER = 'campus-buildings-labels';
 const BUILDINGS_EXTRUSION_LAYER = 'campus-buildings-extrusion';
 const BUILDINGS_ICON_LAYER = 'campus-buildings-icons';
 const POI_LAYER = 'campus-poi-points';
+const POI_PATH_LAYER = 'campus-poi-paths';
+const POI_GREEN_PATH_LAYER = 'campus-poi-green-paths';
 const POI_ICON_LAYER = 'campus-poi-icons';
 const POI_LABELS_LAYER = 'campus-poi-labels';
 const TRANSIT_LABELS_LAYER = 'campus-transit-labels';
@@ -23,9 +25,6 @@ const ROUTE_SOURCE = 'campus-walk-route';
 const ROUTE_LAYER = 'campus-walk-route-line';
 const ROUTE_START_LAYER = 'campus-walk-route-start';
 const ROUTE_END_LAYER = 'campus-walk-route-end';
-const CAMPUS_BOUNDARY_SOURCE = 'campus-boundary';
-const CAMPUS_BOUNDARY_FILL_LAYER = 'campus-boundary-fill';
-const CAMPUS_BOUNDARY_LINE_LAYER = 'campus-boundary-line';
 const BUILDING_EMOJI_CATEGORIES = ['food', 'parking'];
 let emojiEnabledCategories = new Set<string>();
 let labelEnabledCategories = new Set<string>();
@@ -34,6 +33,7 @@ const movingMarkers = new WeakMap<Map, maplibregl.Marker>();
 const routeAnimations = new WeakMap<Map, number>();
 const CATEGORY_EMOJI_ICON_ID_PREFIX = 'category-emoji-icon';
 const OFFICIAL_MAP_BEARING = -113;
+const userLocationMarkers = new WeakMap<Map, maplibregl.Marker>();
 
 const categoryColorExpression = (fallbackCategory = 'institute'): unknown[] => {
   const expression: unknown[] = ['match', ['get', 'category']];
@@ -90,24 +90,6 @@ const genericBuildingNameGuardFilter = (): unknown[] => [
   ['!', ['>=', ['index-of', 'gebaeude', ['downcase', ['coalesce', ['get', 'name'], '']]], 0]],
 ];
 
-const CAMPUS_POLYGON_RING: [number, number][] = [
-  [9.7958, 52.3899],
-  [9.8069, 52.3899],
-  [9.8083, 52.3877],
-  [9.8089, 52.3847],
-  [9.8089, 52.3818],
-  [9.8086, 52.3793],
-  [9.8081, 52.3776],
-  [9.8073, 52.376],
-  [9.8052, 52.3749],
-  [9.801, 52.3746],
-  [9.7973, 52.3749],
-  [9.7962, 52.3762],
-  [9.7958, 52.3784],
-  [9.7957, 52.3818],
-  [9.7957, 52.3855],
-  [9.7958, 52.3899],
-];
 
 const getFilter = (searchText: string, categories: Set<string>) => {
   const normalized = searchText.trim().toLowerCase();
@@ -154,6 +136,18 @@ const popupHtml = (feature: CampusFeature, locale: Locale): string => {
           direction: 'Richtung',
           entrance: 'Eingang',
           wheelchair: 'Rollstuhl',
+          crossing: 'Uebergang',
+          kerb: 'Bordstein',
+          tactilePaving: 'Leit-/Taststreifen',
+          ramp: 'Rampe',
+          bicycleCapacity: 'Fahrradplaetze',
+          bicycleCovered: 'Ueberdacht',
+          bicycleAccess: 'Zugang',
+          parkingCapacity: 'Parkplaetze',
+          parkingFee: 'Gebuehr',
+          parkingMaxStay: 'Max. Parkdauer',
+          parkingType: 'Parktyp',
+          evSockets: 'EV-Anschluesse',
           category: 'Kategorie',
           address: 'Adresse',
           lastVerified: 'Zuletzt geprueft',
@@ -168,6 +162,18 @@ const popupHtml = (feature: CampusFeature, locale: Locale): string => {
           direction: 'Direction',
           entrance: 'Entrance',
           wheelchair: 'Wheelchair',
+          crossing: 'Crossing',
+          kerb: 'Kerb',
+          tactilePaving: 'Tactile paving',
+          ramp: 'Ramp',
+          bicycleCapacity: 'Bike capacity',
+          bicycleCovered: 'Covered',
+          bicycleAccess: 'Access',
+          parkingCapacity: 'Parking capacity',
+          parkingFee: 'Fee',
+          parkingMaxStay: 'Max stay',
+          parkingType: 'Parking type',
+          evSockets: 'EV sockets',
           category: 'Category',
           address: 'Address',
           lastVerified: 'Last verified',
@@ -188,6 +194,18 @@ const popupHtml = (feature: CampusFeature, locale: Locale): string => {
     : '';
   const entranceRow = p.entranceType ? `<p><strong>${labels.entrance}:</strong> ${p.entranceType}</p>` : '';
   const wheelchairRow = p.wheelchair ? `<p><strong>${labels.wheelchair}:</strong> ${p.wheelchair}</p>` : '';
+  const crossingRow = p.crossingType ? `<p><strong>${labels.crossing}:</strong> ${p.crossingType}</p>` : '';
+  const kerbRow = p.kerb ? `<p><strong>${labels.kerb}:</strong> ${p.kerb}</p>` : '';
+  const tactilePavingRow = p.tactilePaving ? `<p><strong>${labels.tactilePaving}:</strong> ${p.tactilePaving}</p>` : '';
+  const rampRow = p.ramp ? `<p><strong>${labels.ramp}:</strong> ${p.ramp}</p>` : '';
+  const bikeCapacityRow = p.bicycleCapacity ? `<p><strong>${labels.bicycleCapacity}:</strong> ${p.bicycleCapacity}</p>` : '';
+  const bikeCoveredRow = p.bicycleCovered ? `<p><strong>${labels.bicycleCovered}:</strong> ${p.bicycleCovered}</p>` : '';
+  const bikeAccessRow = p.bicycleAccess ? `<p><strong>${labels.bicycleAccess}:</strong> ${p.bicycleAccess}</p>` : '';
+  const parkingCapacityRow = p.parkingCapacity ? `<p><strong>${labels.parkingCapacity}:</strong> ${p.parkingCapacity}</p>` : '';
+  const parkingFeeRow = p.parkingFee ? `<p><strong>${labels.parkingFee}:</strong> ${p.parkingFee}</p>` : '';
+  const parkingMaxStayRow = p.parkingMaxStay ? `<p><strong>${labels.parkingMaxStay}:</strong> ${p.parkingMaxStay}</p>` : '';
+  const parkingTypeRow = p.parkingType ? `<p><strong>${labels.parkingType}:</strong> ${p.parkingType}</p>` : '';
+  const evSocketsRow = p.evSockets ? `<p><strong>${labels.evSockets}:</strong> ${p.evSockets}</p>` : '';
   return `
     <article class="popup">
       <h3>${displayName}</h3>
@@ -198,6 +216,18 @@ const popupHtml = (feature: CampusFeature, locale: Locale): string => {
       ${transitDirectionRow}
       ${entranceRow}
       ${wheelchairRow}
+      ${crossingRow}
+      ${kerbRow}
+      ${tactilePavingRow}
+      ${rampRow}
+      ${bikeCapacityRow}
+      ${bikeCoveredRow}
+      ${bikeAccessRow}
+      ${parkingCapacityRow}
+      ${parkingFeeRow}
+      ${parkingMaxStayRow}
+      ${parkingTypeRow}
+      ${evSocketsRow}
       ${openingHoursRow}
       ${phoneRow}
       ${websiteRow}
@@ -276,7 +306,7 @@ export const addCampusLayers = (
       source: BUILDINGS_SOURCE,
       paint: {
         'fill-color': categoryColorExpression('institute') as never,
-        'fill-opacity': 0.5,
+        'fill-opacity': 0.68,
       },
     });
 
@@ -285,8 +315,8 @@ export const addCampusLayers = (
       type: 'line',
       source: BUILDINGS_SOURCE,
       paint: {
-        'line-color': '#1d1d1d',
-        'line-width': 1.2,
+        'line-color': '#475569',
+        'line-width': 0.95,
       },
     });
 
@@ -356,6 +386,39 @@ export const addCampusLayers = (
       },
       layout: {
         visibility: 'none',
+      },
+    });
+
+    map.addLayer({
+      id: POI_PATH_LAYER,
+      type: 'line',
+      source: POI_SOURCE,
+      filter: ['==', ['get', 'category'], 'walkways'],
+      layout: {
+        'line-cap': 'round',
+        'line-join': 'round',
+      },
+      paint: {
+        'line-color': categoryColorExpression('walkways') as never,
+        'line-width': ['interpolate', ['linear'], ['zoom'], 14, 1.4, 18, 4] as never,
+        'line-opacity': 0.8,
+        'line-dasharray': [1.1, 1.1],
+      },
+    });
+
+    map.addLayer({
+      id: POI_GREEN_PATH_LAYER,
+      type: 'line',
+      source: POI_SOURCE,
+      filter: ['==', ['get', 'category'], 'green_areas'],
+      layout: {
+        'line-cap': 'round',
+        'line-join': 'round',
+      },
+      paint: {
+        'line-color': categoryColorExpression('green_areas') as never,
+        'line-width': ['interpolate', ['linear'], ['zoom'], 14, 1.2, 18, 3] as never,
+        'line-opacity': 0.85,
       },
     });
 
@@ -483,23 +546,6 @@ export const addCampusLayers = (
       },
     });
 
-    map.addSource(CAMPUS_BOUNDARY_SOURCE, {
-      type: 'geojson',
-      data: {
-        type: 'FeatureCollection',
-        features: [
-          {
-            type: 'Feature',
-            properties: {},
-            geometry: {
-              type: 'Polygon',
-              coordinates: [CAMPUS_POLYGON_RING],
-            },
-          },
-        ],
-      },
-    });
-
     map.addLayer({
       id: ROUTE_LAYER,
       type: 'line',
@@ -536,26 +582,6 @@ export const addCampusLayers = (
         'circle-radius': 6,
         'circle-stroke-width': 2,
         'circle-stroke-color': '#ffffff',
-      },
-    });
-
-    map.addLayer({
-      id: CAMPUS_BOUNDARY_FILL_LAYER,
-      type: 'fill',
-      source: CAMPUS_BOUNDARY_SOURCE,
-      paint: {
-        'fill-color': '#f43f5e',
-        'fill-opacity': 0.03,
-      },
-    });
-    map.addLayer({
-      id: CAMPUS_BOUNDARY_LINE_LAYER,
-      type: 'line',
-      source: CAMPUS_BOUNDARY_SOURCE,
-      paint: {
-        'line-color': '#f43f5e',
-        'line-width': 5,
-        'line-opacity': 0.95,
       },
     });
 
@@ -597,7 +623,14 @@ export const addCampusLayers = (
         .addTo(map);
     };
 
-    for (const layer of [BUILDINGS_LAYER, BUILDINGS_ICON_LAYER, POI_LAYER, POI_ICON_LAYER]) {
+    for (const layer of [
+      BUILDINGS_LAYER,
+      BUILDINGS_ICON_LAYER,
+      POI_LAYER,
+      POI_PATH_LAYER,
+      POI_GREEN_PATH_LAYER,
+      POI_ICON_LAYER,
+    ]) {
       map.on('click', layer, openPopup);
       map.on('mouseenter', layer, showTooltip);
       map.on('mouseleave', layer, hideTooltip);
@@ -605,6 +638,8 @@ export const addCampusLayers = (
     map.on('mousemove', BUILDINGS_LAYER, moveTooltip);
     map.on('mousemove', BUILDINGS_ICON_LAYER, moveTooltip);
     map.on('mousemove', POI_LAYER, moveTooltip);
+    map.on('mousemove', POI_PATH_LAYER, moveTooltip);
+    map.on('mousemove', POI_GREEN_PATH_LAYER, moveTooltip);
     map.on('mousemove', POI_ICON_LAYER, moveTooltip);
   });
 };
@@ -646,6 +681,18 @@ export const applyFeatureFilters = (
     }
     if (map.getLayer(POI_LAYER)) {
       map.setFilter(POI_LAYER, poiWithoutEmojiFilter);
+    }
+    if (map.getLayer(POI_PATH_LAYER)) {
+      map.setFilter(
+        POI_PATH_LAYER,
+        ['all', filter, ['==', ['get', 'category'], 'walkways']] as never,
+      );
+    }
+    if (map.getLayer(POI_GREEN_PATH_LAYER)) {
+      map.setFilter(
+        POI_GREEN_PATH_LAYER,
+        ['all', filter, ['==', ['get', 'category'], 'green_areas']] as never,
+      );
     }
     if (map.getLayer(POI_ICON_LAYER)) {
       map.setFilter(POI_ICON_LAYER, poiEmojiFilter);
@@ -711,6 +758,10 @@ export const focusFeature = (map: Map, feature: CampusFeature): void => {
       ? geometry.coordinates.flat()
       : geometry.type === 'MultiPolygon'
         ? geometry.coordinates.flat(2)
+        : geometry.type === 'LineString'
+          ? geometry.coordinates
+          : geometry.type === 'MultiLineString'
+            ? geometry.coordinates.flat()
         : [];
 
   coordinates.forEach(([lng, lat]) => bounds.extend([lng, lat]));
@@ -739,6 +790,37 @@ export const clearWalkingRoute = (map: Map): void => {
 export const closeDetailPopups = (map: Map): void => {
   const container = map.getContainer();
   container.querySelectorAll('.maplibregl-popup').forEach((popup) => popup.remove());
+};
+
+export const setUserLocation = (
+  map: Map,
+  coords: [number, number] | null,
+): void => {
+  const existing = userLocationMarkers.get(map);
+  if (!coords) {
+    if (existing) {
+      existing.remove();
+      userLocationMarkers.delete(map);
+    }
+    return;
+  }
+  const [lat, lng] = coords;
+  if (existing) {
+    existing.setLngLat([lng, lat]);
+    return;
+  }
+  const markerElement = document.createElement('div');
+  markerElement.className = 'user-location-marker';
+  markerElement.style.width = '16px';
+  markerElement.style.height = '16px';
+  markerElement.style.borderRadius = '9999px';
+  markerElement.style.background = '#0284c7';
+  markerElement.style.border = '2px solid #ffffff';
+  markerElement.style.boxShadow = '0 0 0 6px rgba(14, 165, 233, 0.25)';
+  const marker = new maplibregl.Marker({ element: markerElement })
+    .setLngLat([lng, lat])
+    .addTo(map);
+  userLocationMarkers.set(map, marker);
 };
 
 export const setWalkingRoute = (
@@ -832,20 +914,11 @@ export const setEmojiEnabledCategories = (map: Map, enabledCategories: Set<strin
     applyFeatureFilters(map, lastFeatureFilterState);
     return;
   }
-  // Fallback if called before first filter sync.
-  const apply = (): void => {
-    if (map.getLayer(POI_ICON_LAYER)) {
-      map.setFilter(POI_ICON_LAYER, ['==', ['get', 'id'], '__none__'] as never);
-    }
-    if (map.getLayer(BUILDINGS_ICON_LAYER)) {
-      map.setFilter(BUILDINGS_ICON_LAYER, ['==', ['get', 'id'], '__none__'] as never);
-    }
-  };
-  if (map.loaded()) {
-    apply();
-  } else {
-    map.once('load', apply);
-  }
+  // If called before first filter sync, apply with broad defaults instead of forcing icons hidden.
+  applyFeatureFilters(map, {
+    searchText: '',
+    categories: new Set(Object.keys(CATEGORY_META)),
+  });
 };
 
 export const setLabelEnabledCategories = (map: Map, enabledCategories: Set<string>): void => {

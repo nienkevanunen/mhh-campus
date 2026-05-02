@@ -28,6 +28,14 @@ const query = `
   node["amenity"](${B});
   node["entrance"](${B});
   node["natural"="tree"](${B});
+  node["highway"="crossing"](${B});
+  node["kerb"](${B});
+  node["tactile_paving"](${B});
+  node["ramp"](${B});
+  node["wheelchair"](${B});
+  way["leisure"~"^(park|garden)$"](${B});
+  way["landuse"~"^(grass|meadow|forest)$"](${B});
+  way["natural"~"^(wood|tree_row)$"](${B});
   node["healthcare"](${B});
   way["healthcare"](${B});
   node["public_transport"](${B});

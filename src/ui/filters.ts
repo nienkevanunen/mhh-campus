@@ -12,6 +12,22 @@ const FACILITY_CATEGORIES = new Set([
   'facilities',
   'finance',
 ]);
+const AUTO_ENABLE_EMOJI_ON_SHOW = new Set([
+  'entrance',
+  'trees',
+  'green_areas',
+  'benches',
+  'waste_baskets',
+  'shelter',
+  'postal',
+  'charging',
+  'bicycle',
+  'motorcycle',
+  'facilities',
+  'finance',
+  'accessibility',
+  'walkways',
+]);
 
 export const setupCategoryFilters = (
   container: HTMLDivElement,
@@ -50,15 +66,20 @@ export const setupCategoryFilters = (
     visibilityInput.addEventListener('change', () => {
       if (visibilityInput.checked) {
         active.add(category);
+        if (AUTO_ENABLE_EMOJI_ON_SHOW.has(category)) {
+          emojiEnabled.add(category);
+          emojiInput.checked = true;
+        }
         onVisibilityChange(new Set(active));
+        onEmojiChange(new Set(emojiEnabled));
       } else {
         active.delete(category);
-        onVisibilityChange(new Set(active));
         // Keep state consistent: hidden categories cannot keep labels/emojis enabled.
         emojiEnabled.delete(category);
         labelEnabled.delete(category);
         emojiInput.checked = false;
         labelInput.checked = false;
+        onVisibilityChange(new Set(active));
         onEmojiChange(new Set(emojiEnabled));
         onLabelChange(new Set(labelEnabled));
       }

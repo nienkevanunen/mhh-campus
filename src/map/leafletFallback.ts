@@ -23,6 +23,7 @@ type LeafletCampusMap = {
   clearWalkingRoute: () => void;
   closeDetailPopups: () => void;
   pickPointOnce: (onPick: (coords: [number, number]) => void) => void;
+  setUserLocation: (coords: [number, number] | null, accuracyMeters?: number) => void;
   resetView: () => void;
   alignToReferenceOrientation: () => void;
 };
@@ -37,41 +38,28 @@ const LEAFLET_MAX_ZOOM = 19;
 const LEAFLET_PERMANENT_LABEL_MIN_ZOOM = 16.2;
 const LEAFLET_PERMANENT_SHORT_LABEL_MIN_ZOOM = 15.8;
 const LEAFLET_PERMANENT_LABEL_MAX_CHARS = 24;
-const CAMPUS_POLYGON_LATLNGS: [number, number][] = [
-  [52.3899, 9.7958],
-  [52.3899, 9.8069],
-  [52.3877, 9.8083],
-  [52.3847, 9.8089],
-  [52.3818, 9.8089],
-  [52.3793, 9.8086],
-  [52.3776, 9.8081],
-  [52.376, 9.8073],
-  [52.3749, 9.8052],
-  [52.3746, 9.801],
-  [52.3749, 9.7973],
-  [52.3762, 9.7962],
-  [52.3784, 9.7958],
-  [52.3818, 9.7957],
-  [52.3855, 9.7957],
-  [52.3899, 9.7958],
-];
-
-const getLeafletBasemapConfig = (basemap: BasemapStyle, theme: ThemeMode): { url: string; attribution: string } => {
+const getLeafletBasemapConfig = (
+  basemap: BasemapStyle,
+  theme: ThemeMode,
+): { url: string; attribution: string; opacity: number } => {
   if (theme === 'dark') {
     return {
-      url: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+      url: 'https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png',
       attribution: '&copy; OpenStreetMap contributors, &copy; CARTO',
+      opacity: 1,
     };
   }
   if (basemap === 'light') {
     return {
       url: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
       attribution: '&copy; OpenStreetMap contributors, &copy; CARTO',
+      opacity: 0.5,
     };
   }
   return {
     url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     attribution: '&copy; OpenStreetMap contributors',
+    opacity: 0.5,
   };
 };
 
@@ -109,6 +97,18 @@ const popupHtml = (feature: CampusFeature, locale: Locale): string => {
           direction: 'Richtung',
           entrance: 'Eingang',
           wheelchair: 'Rollstuhl',
+          crossing: 'Uebergang',
+          kerb: 'Bordstein',
+          tactilePaving: 'Leit-/Taststreifen',
+          ramp: 'Rampe',
+          bicycleCapacity: 'Fahrradplaetze',
+          bicycleCovered: 'Ueberdacht',
+          bicycleAccess: 'Zugang',
+          parkingCapacity: 'Parkplaetze',
+          parkingFee: 'Gebuehr',
+          parkingMaxStay: 'Max. Parkdauer',
+          parkingType: 'Parktyp',
+          evSockets: 'EV-Anschluesse',
           category: 'Kategorie',
           address: 'Adresse',
           lastVerified: 'Zuletzt geprueft',
@@ -123,6 +123,18 @@ const popupHtml = (feature: CampusFeature, locale: Locale): string => {
           direction: 'Direction',
           entrance: 'Entrance',
           wheelchair: 'Wheelchair',
+          crossing: 'Crossing',
+          kerb: 'Kerb',
+          tactilePaving: 'Tactile paving',
+          ramp: 'Ramp',
+          bicycleCapacity: 'Bike capacity',
+          bicycleCovered: 'Covered',
+          bicycleAccess: 'Access',
+          parkingCapacity: 'Parking capacity',
+          parkingFee: 'Fee',
+          parkingMaxStay: 'Max stay',
+          parkingType: 'Parking type',
+          evSockets: 'EV sockets',
           category: 'Category',
           address: 'Address',
           lastVerified: 'Last verified',
@@ -143,6 +155,18 @@ const popupHtml = (feature: CampusFeature, locale: Locale): string => {
     : '';
   const entranceRow = p.entranceType ? `<p><strong>${labels.entrance}:</strong> ${p.entranceType}</p>` : '';
   const wheelchairRow = p.wheelchair ? `<p><strong>${labels.wheelchair}:</strong> ${p.wheelchair}</p>` : '';
+  const crossingRow = p.crossingType ? `<p><strong>${labels.crossing}:</strong> ${p.crossingType}</p>` : '';
+  const kerbRow = p.kerb ? `<p><strong>${labels.kerb}:</strong> ${p.kerb}</p>` : '';
+  const tactilePavingRow = p.tactilePaving ? `<p><strong>${labels.tactilePaving}:</strong> ${p.tactilePaving}</p>` : '';
+  const rampRow = p.ramp ? `<p><strong>${labels.ramp}:</strong> ${p.ramp}</p>` : '';
+  const bikeCapacityRow = p.bicycleCapacity ? `<p><strong>${labels.bicycleCapacity}:</strong> ${p.bicycleCapacity}</p>` : '';
+  const bikeCoveredRow = p.bicycleCovered ? `<p><strong>${labels.bicycleCovered}:</strong> ${p.bicycleCovered}</p>` : '';
+  const bikeAccessRow = p.bicycleAccess ? `<p><strong>${labels.bicycleAccess}:</strong> ${p.bicycleAccess}</p>` : '';
+  const parkingCapacityRow = p.parkingCapacity ? `<p><strong>${labels.parkingCapacity}:</strong> ${p.parkingCapacity}</p>` : '';
+  const parkingFeeRow = p.parkingFee ? `<p><strong>${labels.parkingFee}:</strong> ${p.parkingFee}</p>` : '';
+  const parkingMaxStayRow = p.parkingMaxStay ? `<p><strong>${labels.parkingMaxStay}:</strong> ${p.parkingMaxStay}</p>` : '';
+  const parkingTypeRow = p.parkingType ? `<p><strong>${labels.parkingType}:</strong> ${p.parkingType}</p>` : '';
+  const evSocketsRow = p.evSockets ? `<p><strong>${labels.evSockets}:</strong> ${p.evSockets}</p>` : '';
   return `
     <article class="popup">
       <h3>${displayName}</h3>
@@ -153,6 +177,18 @@ const popupHtml = (feature: CampusFeature, locale: Locale): string => {
       ${transitDirectionRow}
       ${entranceRow}
       ${wheelchairRow}
+      ${crossingRow}
+      ${kerbRow}
+      ${tactilePavingRow}
+      ${rampRow}
+      ${bikeCapacityRow}
+      ${bikeCoveredRow}
+      ${bikeAccessRow}
+      ${parkingCapacityRow}
+      ${parkingFeeRow}
+      ${parkingMaxStayRow}
+      ${parkingTypeRow}
+      ${evSocketsRow}
       ${openingHoursRow}
       ${phoneRow}
       ${websiteRow}
@@ -232,14 +268,7 @@ export const initLeafletFallbackMap = (
     attribution: basemapConfig.attribution,
     minZoom: LEAFLET_MIN_ZOOM,
     maxZoom: LEAFLET_MAX_ZOOM,
-  }).addTo(map);
-
-  L.polygon(CAMPUS_POLYGON_LATLNGS, {
-    color: '#f43f5e',
-    weight: 5,
-    fillColor: '#f43f5e',
-    fillOpacity: 0.03,
-    interactive: false,
+    opacity: basemapConfig.opacity,
   }).addTo(map);
 
   const transitRouteLayer = L.layerGroup().addTo(map);
@@ -250,7 +279,10 @@ export const initLeafletFallbackMap = (
   let emojiEnabledCategories = new Set<string>(allFeatures.map((feature) => feature.properties.category));
   let labelEnabledCategories = new Set<string>(allFeatures.map((feature) => feature.properties.category));
   const routeLayer = L.layerGroup().addTo(map);
+  const userLocationLayer = L.layerGroup().addTo(map);
   let routeAnimationId: number | null = null;
+  let userLocationMarker: L.CircleMarker | null = null;
+  let userLocationAccuracyCircle: L.Circle | null = null;
   const initialCategories =
     initialVisibleCategories && initialVisibleCategories.size > 0
       ? new Set(initialVisibleCategories)
@@ -318,12 +350,37 @@ export const initLeafletFallbackMap = (
       }
 
       L.geoJSON(feature as GeoJSON, {
-        style: () => ({
-          color: '#1d1d1d',
-          weight: 1.2,
-          fillColor: colorByCategory(feature.properties.category),
-          fillOpacity: 0.45,
-        }),
+        style: () => {
+          if (feature.properties.category === 'walkways') {
+            return {
+              color: colorByCategory(feature.properties.category),
+              weight: Math.max(1.2, Math.min(4, mapZoom - 13)),
+              opacity: 0.85,
+              dashArray: '4 4',
+            };
+          }
+          if (feature.properties.category === 'green_areas' && (feature.geometry.type === 'LineString' || feature.geometry.type === 'MultiLineString')) {
+            return {
+              color: colorByCategory(feature.properties.category),
+              weight: Math.max(1.1, Math.min(3, mapZoom - 14)),
+              opacity: 0.85,
+            };
+          }
+          if (feature.properties.category === 'green_areas') {
+            return {
+              color: '#3f7045',
+              weight: 1,
+              fillColor: colorByCategory(feature.properties.category),
+              fillOpacity: 0.55,
+            };
+          }
+          return {
+            color: '#475569',
+            weight: 1,
+            fillColor: colorByCategory(feature.properties.category),
+            fillOpacity: 0.68,
+          };
+        },
         onEachFeature: (_, layer) => {
           layer
             .bindTooltip(tooltipContent(feature), tooltipOpts)
@@ -434,6 +491,39 @@ export const initLeafletFallbackMap = (
         onPick([event.latlng.lat, event.latlng.lng]);
       });
     },
+    setUserLocation: (coords, accuracyMeters) => {
+      if (!coords) {
+        userLocationLayer.clearLayers();
+        userLocationMarker = null;
+        userLocationAccuracyCircle = null;
+        return;
+      }
+      const [lat, lng] = coords;
+      if (!userLocationAccuracyCircle) {
+        userLocationAccuracyCircle = L.circle([lat, lng], {
+          radius: Math.max(5, accuracyMeters ?? 25),
+          color: '#0ea5e9',
+          weight: 1,
+          fillColor: '#38bdf8',
+          fillOpacity: 0.14,
+          interactive: false,
+        }).addTo(userLocationLayer);
+      } else {
+        userLocationAccuracyCircle.setLatLng([lat, lng]);
+        userLocationAccuracyCircle.setRadius(Math.max(5, accuracyMeters ?? 25));
+      }
+      if (!userLocationMarker) {
+        userLocationMarker = L.circleMarker([lat, lng], {
+          radius: 7,
+          color: '#ffffff',
+          weight: 2,
+          fillColor: '#0284c7',
+          fillOpacity: 1,
+        }).addTo(userLocationLayer);
+      } else {
+        userLocationMarker.setLatLng([lat, lng]);
+      }
+    },
     resetView: () => {
       map.flyTo(MHH_CENTER, LEAFLET_MIN_ZOOM, { duration: 0.6 });
     },
@@ -454,6 +544,10 @@ export const initLeafletFallbackMap = (
           ? geometry.coordinates.flat()
           : geometry.type === 'MultiPolygon'
             ? geometry.coordinates.flat(2)
+            : geometry.type === 'LineString'
+              ? geometry.coordinates
+              : geometry.type === 'MultiLineString'
+                ? geometry.coordinates.flat()
             : [];
 
       if (coordinates.length > 0) {
